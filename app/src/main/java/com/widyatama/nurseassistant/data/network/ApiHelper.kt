@@ -1,4 +1,4 @@
-package com.widyatama.univcare.data.network
+package com.widyatama.nurseassistant.data.network
 
 import com.widyatama.core.data.session.SessionHelper
 import com.widyatama.core.util.SchedulerProviderUtil

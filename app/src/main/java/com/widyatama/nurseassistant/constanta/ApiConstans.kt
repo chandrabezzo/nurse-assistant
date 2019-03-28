@@ -1,4 +1,4 @@
-package com.widyatama.univcare.constanta
+package com.widyatama.nurseassistant.constanta
 
 /**
  * Created by bezzo on 28/09/17.

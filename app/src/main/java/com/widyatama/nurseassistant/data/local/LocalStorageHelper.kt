@@ -1,7 +1,7 @@
-package com.widyatama.univcare.data.local
+package com.widyatama.nurseassistant.data.local
 
 import android.content.Context
-import com.widyatama.univcare.data.local.sampleDB.SampleDatabase
+import com.widyatama.nurseassistant.data.local.sampleDB.SampleDatabase
 
 /**
  * Created by bezzo on 11/01/18.

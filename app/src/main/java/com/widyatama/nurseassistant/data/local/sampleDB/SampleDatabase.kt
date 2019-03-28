@@ -1,4 +1,4 @@
-package com.widyatama.univcare.data.local.sampleDB
+package com.widyatama.nurseassistant.data.local.sampleDB
 
 import android.content.Context
 import androidx.room.Database
@@ -6,9 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.widyatama.univcare.constanta.AppConstans
-import com.widyatama.univcare.data.local.sampleDB.dao.*
-import com.widyatama.univcare.data.model.*
+import com.widyatama.nurseassistant.constanta.AppConstans
+import com.widyatama.nurseassistant.data.local.sampleDB.dao.*
+import com.widyatama.nurseassistant.data.model.*
 
 /**
  * Created by bezzo on 11/01/18.

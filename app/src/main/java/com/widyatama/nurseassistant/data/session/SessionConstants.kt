@@ -1,4 +1,4 @@
-package com.widyatama.univcare.data.session
+package com.widyatama.nurseassistant.data.session
 
 /**
  * Created by bezzo on 02/02/18.

@@ -1,13 +1,13 @@
-package com.widyatama.univcare.data.model
+package com.widyatama.nurseassistant.data.model
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.widyatama.core.base.BaseResponse
-import com.widyatama.univcare.constanta.AppConstans
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import com.widyatama.core.base.BaseResponse
+import com.widyatama.nurseassistant.constanta.AppConstans
 
 class UserResponse : BaseResponse() {
     @SerializedName("data")
@@ -32,10 +32,5 @@ class UserResponse : BaseResponse() {
         @ColumnInfo(name = "jabatan")
         @Expose
         var jabatan: String? = null
-
-        @SerializedName("alamat")
-        @ColumnInfo(name = "alamat")
-        @Expose
-        var alamat : Alamat? = null
     }
 }

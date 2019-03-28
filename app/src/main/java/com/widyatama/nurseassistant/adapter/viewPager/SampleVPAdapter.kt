@@ -1,4 +1,4 @@
-package com.widyatama.univcare.adapter.viewPager
+package com.widyatama.nurseassistant.adapter.viewPager
 
 import android.content.Context
 import androidx.fragment.app.Fragment

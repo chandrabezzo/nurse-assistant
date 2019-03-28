@@ -1,11 +1,11 @@
-package com.widyatama.univcare.data.local.sampleDB.dao
+package com.widyatama.nurseassistant.data.local.sampleDB.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.widyatama.univcare.constanta.AppConstans
-import com.widyatama.univcare.data.model.UserResponse
+import com.widyatama.nurseassistant.constanta.AppConstans
+import com.widyatama.nurseassistant.data.model.UserResponse
 import io.reactivex.Flowable
 
 

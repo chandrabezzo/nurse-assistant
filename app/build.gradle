@@ -11,12 +11,12 @@ android {
     flavorDimensions "default"
 
     defaultConfig {
-        applicationId "id.ac.widyatama.univcare"
+        applicationId "id.ac.widyatama.if.nurseassistant"
         minSdkVersion 19
         targetSdkVersion 28
         multiDexEnabled true
         versionCode 1
-        versionName "1.2.0"
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         // used by Room, to test migrations
@@ -36,11 +36,10 @@ android {
 
     buildTypes {
         debug {
-            resValue "string", "app_name", "Univ Care Dev"
+            resValue "string", "app_name", "Nurse Assistant Dev"
             applicationIdSuffix ".dev"
             versionNameSuffix '.DEBUG'
             useProguard false
-            buildConfigField("String", "BASE_COUNTRY", "\"https://restcountries.eu/rest/v2/\"")
             buildConfigField("String", "BASE_URL", "\"http://universities.hipolabs.com/\"")
         }
         staging {
@@ -48,16 +47,14 @@ android {
             useProguard true
             applicationIdSuffix ".staging"
             versionNameSuffix '.STAGING'
-            resValue "string", "app_name", "Univ Care Staging"
-            buildConfigField("String", "BASE_COUNTRY", "\"https://restcountries.eu/rest/v2/\"")
+            resValue "string", "app_name", "Nurse Assistant Staging"
             buildConfigField("String", "BASE_URL", "http://universities.hipolabs.com/\"")
         }
         release {
             minifyEnabled true
             useProguard true
-            resValue "string", "app_name", "Univ Care"
+            resValue "string", "app_name", "Nurse Assistant"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField("String", "BASE_COUNTRY", "\"https://restcountries.eu/rest/v2/\"")
             buildConfigField("String", "BASE_URL", "http://universities.hipolabs.com/\"")
         }
     }
@@ -143,18 +140,6 @@ dependencies {
     // # Local Unit Test
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
-
-    //  Map
-    implementation "com.google.android.gms:play-services-maps:$rootProject.ext.playServiceVersion"
-    implementation "com.google.android.gms:play-services-location:$rootProject.ext.playServiceVersion"
-    implementation "com.google.android.gms:play-services-places:$rootProject.ext.playServiceVersion"
-    implementation "com.google.maps.android:android-maps-utils:$rootProject.ext.mapsUtils"
-
-    // Firebase
-    implementation "com.google.firebase:firebase-messaging:$rootProject.ext.firebaseMessagingVersion"
-    implementation "com.firebase:firebase-client-android:$rootProject.ext.firebaseClientVersion"
-    implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseCoreVersion"
-    implementation "com.crashlytics.sdk.android:crashlytics:$rootProject.ext.crashlyticsVersion"
 
     // # UI Testing
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espressoVersion"

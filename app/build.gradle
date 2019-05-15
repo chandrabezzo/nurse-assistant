@@ -146,4 +146,8 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.ext.espressoVersion"
     androidTestImplementation "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
     androidTestImplementation "androidx.test:runner:$rootProject.ext.testRunnerVersion"
+
+    implementation 'com.romandanylyk:pageindicatorview:1.0.0@aar'
+
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
 }

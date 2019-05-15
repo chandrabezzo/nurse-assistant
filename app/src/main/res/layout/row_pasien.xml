@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="8dp"
+    android:layout_margin="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_hover"
+        android:clickable="true"
+        android:padding="@dimen/padding_page">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_nurse"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/image"
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/HeaderFont.Bold"
+                android:text="Iman Mutaqin"
+                android:textColor="@color/darkerGray"/>
+            <TextView
+                style="@style/HeaderFont"
+                android:text="Iman Mutaqin"
+                android:textSize="14sp"
+                android:textColor="@color/grayDark"/>
+            <TextView
+                android:layout_marginTop="8dp"
+                style="@style/HeaderFont"
+                android:text="Todo list :"
+                android:textSize="16sp"
+                android:textColor="@color/grayDark"/>
+            <TextView
+                style="@style/HeaderFont"
+                android:text="1. Cek Tekanan Darah"
+                android:textSize="14sp"
+                android:textColor="@color/blueLight"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/HeaderFont.Bold"
+            android:layout_alignParentRight="true"
+            android:text="10.00"
+            android:textSize="24sp"
+            android:textColor="@color/grayDark"/>
+    </RelativeLayout>
+    
+
+
+</RelativeLayout>

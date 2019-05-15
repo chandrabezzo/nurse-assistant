@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:name="com.widyatama.nurseassistant.MvpApp"
+        android:name=".MvpApp"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".features.measurement.MeasurementActivity"></activity>
+        <activity android:name=".features.detailPatient.DetailPatientActivity" />
+        <activity android:name=".features.main.MainActivity" />
+        <activity android:name=".features.login.LoginActivity" />
         <activity android:name=".features.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,15 +26,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".features.favorite.FavoriteActivity" />
-        <activity android:name=".features.campusType.CampusTypeActivity">
-        </activity>
+        <activity android:name=".features.campusType.CampusTypeActivity" />
         <activity android:name=".features.country.CountryActivity" />
         <activity android:name=".features.filter.FilterActivity" />
         <activity android:name=".features.list.ListActivity" />
         <activity android:name=".features.search.SearchActivity" />
-        <activity android:name=".features.webview.WebViewActivity"></activity>
+        <activity android:name=".features.webview.WebViewActivity" />
     </application>
 
 </manifest>

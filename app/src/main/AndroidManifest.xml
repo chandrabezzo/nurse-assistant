@@ -15,24 +15,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.measurement.MeasurementActivity"></activity>
-        <activity android:name=".features.detailPatient.DetailPatientActivity" />
-        <activity android:name=".features.main.MainActivity" />
-        <activity android:name=".features.login.LoginActivity" />
-        <activity android:name=".features.home.HomeActivity">
+        <activity android:name=".features.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".features.favorite.FavoriteActivity" />
-        <activity android:name=".features.campusType.CampusTypeActivity" />
-        <activity android:name=".features.country.CountryActivity" />
-        <activity android:name=".features.filter.FilterActivity" />
-        <activity android:name=".features.list.ListActivity" />
-        <activity android:name=".features.search.SearchActivity" />
-        <activity android:name=".features.webview.WebViewActivity" />
+        <activity android:name=".features.measurement.MeasurementActivity" />
+        <activity android:name=".features.detailPatient.DetailPatientActivity" />
+        <activity android:name=".features.main.MainActivity" />
+        <activity android:name=".features.login.LoginActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

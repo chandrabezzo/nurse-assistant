@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_healing"
+        android:title="@string/healing"
+        android:icon="@drawable/ic_stethoscope_black"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/nav_jadwal"
+        android:title="@string/jadwal"
+        android:icon="@drawable/ic_event_white"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/nav_patient"
+        android:title="@string/pasien"
+        android:icon="@drawable/ic_people_white"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/nav_nurse"
+        android:title="@string/nurse"
+        android:icon="@drawable/ic_switch_user"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/nav_akun"
+        android:title="@string/akun"
+        android:icon="@drawable/ic_person_white"
+        app:showAsAction="ifRoom"/>
+</menu>

@@ -9,40 +9,33 @@
     <string name="log_data_is_null">Data is null</string>
     <string name="telegram_id">\@chandra_bezzo</string>
 
-    <!-- Main -->
-    <string name="beranda">Beranda</string>
-    <string name="user">User</string>
-    <string name="alamat">Alamat</string>
-    <string name="socmed">Social Media</string>
-    <string name="list">List</string>
-
-    <string name="login">Login</string>
-    <string name="register">Register</string>
-    <string name="forgot_password">Forgot Password</string>
-
-    <string name="email">Email</string>
+    <!-- Login -->
+    <string name="nip">NIP</string>
     <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="nurse_assistant">Nurse Assistant</string>
 
-    <!-- Search -->
-    <string name="nama_kampus">Nama Kampus</string>
-    <string name="universitas">Universitas</string>
-    <string name="politeknik">Politeknik</string>
-    <string name="institut">Institut</string>
-    <string name="cari_kampus">Cari Kampus</string>
+    <!-- Healing -->
+    <string name="healing">Healing</string>
+    <string name="jadwal">Jadwal</string>
+    <string name="pasien">Pasien</string>
+    <string name="nurse">Nurse</string>
+    <string name="akun">Akun</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="filter">Filter</string>
-    <string name="favorite">Favorite</string>
-    <string name="tambahkan_sebagai_favorite">Tambahkan sebagai favorite?</string>
-    <string name="hapus_dari_favorite">Hapus dari favorite?</string>
+    <!-- Akun -->
+    <string name="edit">Edit</string>
+    <string name="nama_lengkap">Full Name</string>
+    <string name="no_telpon">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="birthday">Birthday</string>
+    <string name="address">Address</string>
 
-
-    <string name="kategori_kampus">Kategori Kampus</string>
-    <string name="kategori_negara">Kategori Negara</string>
-    <string name="negara">Negara</string>
-    <string name="kategori">Kategori</string>
-    <string name="searching">Cari Kampus</string>
-
-
+    <!-- Patient -->
+    <string name="umur_tahun">Tahun</string>
+    <string name="tuan">Mr.</string>
+    <string name="nona">Mrs.</string>
+    <string name="detail_patient">Detail Patient</string>
+    <string name="history">History</string>
+    <string name="patient_information">Patient Information</string>
+    <string name="diseases_history">Diseases History</string>
 </resources>

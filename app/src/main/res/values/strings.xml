@@ -44,5 +44,23 @@
     <string name="kategori">Kategori</string>
     <string name="searching">Cari Kampus</string>
 
+    <string-array name="list_lantai">
+        <item>Lantai 1</item>
+        <item>Lantai 2</item>
+        <item>Lantai 3</item>
+    </string-array>
+
+    <string-array name="list_kamar">
+        <item>Kamar 1</item>
+        <item>Kamar 2</item>
+        <item>Kam3r 2</item>
+    </string-array>
+
+    <string-array name="list_kasur">
+        <item>Kasur 1</item>
+        <item>Kasur 2</item>
+        <item>Kasur 3</item>
+    </string-array>
+
 
 </resources>

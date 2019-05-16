@@ -22,6 +22,7 @@
             android:layout_gravity="center_horizontal"/>
 
         <EditText
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Base.V7.Widget.AppCompat.EditText"
@@ -33,16 +34,19 @@
             android:weightSum="3"
             android:orientation="horizontal">
             <Spinner
+                android:id="@+id/spinLantai"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 style="@style/Base.Widget.AppCompat.DropDownItem.Spinner"/>
             <Spinner
+                android:id="@+id/spinKamar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 style="@style/Base.Widget.AppCompat.DropDownItem.Spinner"/>
             <Spinner
+                android:id="@+id/spinKasur"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -50,17 +54,20 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Base.V7.Widget.AppCompat.EditText"
             android:hint="Jam Kunjungan"/>
         <EditText
+            android:id="@+id/todo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Base.V7.Widget.AppCompat.EditText"
             android:hint="Todo List"/>
 
         <ImageView
+            android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

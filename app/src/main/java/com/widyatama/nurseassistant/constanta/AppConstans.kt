@@ -16,6 +16,7 @@ object AppConstans {
 
     // Table
     const val USER = "User"
+    const val PASIEN = "Pasien"
     const val JABATAN = "Jabatan"
     const val KARYAWAN = "Karyawan"
     const val SOCMED = "Socmed"

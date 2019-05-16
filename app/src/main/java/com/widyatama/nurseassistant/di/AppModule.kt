@@ -6,6 +6,10 @@ import com.widyatama.core.data.session.SessionHelper
 import com.widyatama.core.util.SchedulerProviderUtil
 import com.widyatama.nurseassistant.data.local.LocalStorageHelper
 import com.widyatama.nurseassistant.data.network.ApiHelper
+import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienPresenter
+import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienViewContract
+import com.widyatama.nurseassistant.view.fragment.BottomAddPasienPresenter
+import com.widyatama.nurseassistant.view.fragment.BottomAddPasienViewContract
 import io.reactivex.disposables.CompositeDisposable
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module.module
@@ -20,7 +24,8 @@ val appModule = module {
 }
 
 val presenterModule = module {
-
+    factory { ListPasienPresenter<ListPasienViewContract>(get(), get(), get(), get(), get()) }
+    factory { BottomAddPasienPresenter<BottomAddPasienViewContract>(get(), get(), get(), get(), get()) }
 }
 
 val rvAdapterModule = module {

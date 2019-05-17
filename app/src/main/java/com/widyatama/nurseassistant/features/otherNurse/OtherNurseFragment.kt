@@ -60,13 +60,16 @@ class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                searchView.clearFocus()
-                query?.let {  }
                 return true
             }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return false
+            override fun onQueryTextChange(query: String?): Boolean {
+                query?.let { query ->
+                    val filteredList = list.filter { it.nama.contains(query) }
+                    adapter.setItem(filteredList)
+                    adapter.notifyDataSetChanged()
+                }
+                return true
             }
         })
     }

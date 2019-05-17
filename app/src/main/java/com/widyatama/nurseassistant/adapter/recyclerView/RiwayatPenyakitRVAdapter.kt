@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.widyatama.core.base.BaseHolder
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.data.model.RiwayatPenyakit
+import kotlinx.android.synthetic.main.item_rv_riwayat_penyakit.view.*
 
 class RiwayatPenyakitRVAdapter constructor(val context: Context, val list: ArrayList<RiwayatPenyakit>)
     : RecyclerView.Adapter<RiwayatPenyakitRVAdapter.Item>() {
@@ -32,7 +33,8 @@ class RiwayatPenyakitRVAdapter constructor(val context: Context, val list: Array
 
     inner class Item(itemView: View): BaseHolder<RiwayatPenyakit>(itemView){
         override fun setContent(model: RiwayatPenyakit) {
-
+            itemView.tv_nama.text = model.nama
+            itemView.tv_tahun.text = model.tahun
         }
     }
 }

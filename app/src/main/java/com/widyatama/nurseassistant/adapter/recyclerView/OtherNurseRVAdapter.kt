@@ -26,7 +26,7 @@ class OtherNurseRVAdapter constructor(val context: Context, val list: ArrayList<
         holder.model = list[position]
     }
 
-    fun setItem(values: ArrayList<Nurse>){
+    fun setItem(values: List<Nurse>){
         list.clear()
         list.addAll(values)
     }

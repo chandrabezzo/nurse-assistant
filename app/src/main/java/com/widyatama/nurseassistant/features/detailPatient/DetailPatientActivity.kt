@@ -22,6 +22,7 @@ class DetailPatientActivity : BaseActivity(), DetailPatienViewContracts {
 
         mActionBar = supportActionBar
         displayHome()
+        setActionBarTitle(getString(R.string.detail_patient))
 
         dataReceived?.getString(AppConstans.PATIENT)?.let { presenter.getInformation(it) }
 

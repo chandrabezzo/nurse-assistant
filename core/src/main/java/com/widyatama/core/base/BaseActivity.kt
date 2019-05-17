@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
@@ -139,5 +140,15 @@ abstract class BaseActivity : AppCompatActivity(), BaseActivityContract, BaseFra
         if (isAnimEnabled || Build.VERSION.SDK_INT < 21){
             overridePendingTransition(R.anim.scale_in, R.anim.slide_out_to_right)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId){
+            android.R.id.home -> {
+                onNavigationClick()
+            }
+        }
+
+        return true
     }
 }

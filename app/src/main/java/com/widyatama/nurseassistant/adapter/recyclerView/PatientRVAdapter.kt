@@ -33,7 +33,7 @@ class PatientRVAdapter constructor(val context: Context, val list: ArrayList<Pat
         holder.model = list[position]
     }
 
-    fun setItem(values: ArrayList<Patient>){
+    fun setItem(values: List<Patient>){
         list.clear()
         list.addAll(values)
     }

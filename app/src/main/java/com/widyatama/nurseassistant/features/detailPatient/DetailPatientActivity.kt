@@ -20,13 +20,8 @@ class DetailPatientActivity : BaseActivity(), DetailPatienViewContracts {
     override fun onInitializedView(savedInstanceState: Bundle?) {
         presenter.onAttach(this)
 
-        setSupportActionBar(toolbar)
         mActionBar = supportActionBar
         displayHome()
-        setActionBarTitle(getString(R.string.detail_patient))
-        toolbar.setNavigationOnClickListener {
-            onNavigationClick()
-        }
 
         dataReceived?.getString(AppConstans.PATIENT)?.let { presenter.getInformation(it) }
 

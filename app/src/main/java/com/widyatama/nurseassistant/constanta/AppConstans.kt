@@ -23,4 +23,6 @@ object AppConstans {
 
     // Country
     const val COUNTRY_NAME = "CountryName"
+    const val PATIENT = "Patient"
+    const val No_RM = "NoRm"
 }

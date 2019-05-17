@@ -1,13 +1,54 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.widyatama.nurseassistant.features.jadwal.JadwalFragment">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <com.widyatama.nurseassistant.customView.FlexibleCalendar
+            android:id="@+id/cv_jadwal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:showWeek="true"
+            app:firstDayOfWeek="monday"
+            app:state="expanded"
+            app:textColor="@color/text_2"
+            app:primaryColor="@color/white"
+            app:todayItem_textColor="@color/black"
+            app:todayItem_background="@drawable/bg_gray"
+            app:selectedItem_textColor="@color/white"
+            app:selectedItem_background="@drawable/bg_secondary"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_more_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:src="@drawable/ic_expand_less_primary_24dp"/>
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_jadwal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"/>
+
+            <ProgressBar
+                android:id="@+id/pb_load_more_jadwal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

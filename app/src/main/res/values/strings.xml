@@ -30,6 +30,38 @@
     <string name="birthday">Birthday</string>
     <string name="address">Address</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="filter">Filter</string>
+    <string name="favorite">Favorite</string>
+    <string name="tambahkan_sebagai_favorite">Tambahkan sebagai favorite?</string>
+    <string name="hapus_dari_favorite">Hapus dari favorite?</string>
+
+
+    <string name="kategori_kampus">Kategori Kampus</string>
+    <string name="kategori_negara">Kategori Negara</string>
+    <string name="negara">Negara</string>
+    <string name="kategori">Kategori</string>
+    <string name="searching">Cari Kampus</string>
+
+    <string-array name="list_lantai">
+        <item>Lantai 1</item>
+        <item>Lantai 2</item>
+        <item>Lantai 3</item>
+    </string-array>
+
+    <string-array name="list_kamar">
+        <item>Kamar 1</item>
+        <item>Kamar 2</item>
+        <item>Kam3r 2</item>
+    </string-array>
+
+    <string-array name="list_kasur">
+        <item>Kasur 1</item>
+        <item>Kasur 2</item>
+        <item>Kasur 3</item>
+    </string-array>
+
     <!-- Patient -->
     <string name="umur_tahun">Tahun</string>
     <string name="tuan">Mr.</string>

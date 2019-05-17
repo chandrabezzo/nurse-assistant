@@ -17,7 +17,7 @@ SchedulerProviderUtil, compositeDisposable: CompositeDisposable) : BasePresenter
 
         for (counter in 0..50){
             val patient = Patient("$counter", "Patient $counter", counter%2 == 0,
-                    (20 + counter), "Buahdua, Sumedang")
+                    (20 + counter), "Buahdua, Sumedang", "08156415204")
             allPatient.add(patient)
         }
 

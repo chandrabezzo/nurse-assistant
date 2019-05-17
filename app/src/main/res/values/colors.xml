@@ -11,4 +11,17 @@
     <color name="yellowTransparent">#EDF79D</color>
     <color name="greenTransparent">#95D4D4</color>
 
+    <color name="lightGray">#DFDFDF</color>
+    <color name="darkerGray">#808080</color>
+    <color name="black">#000000</color>
+    <color name="blue">#0000d2</color>
+    <color name="blueDark">#30132c</color>
+    <color name="blueHover">#300211</color>
+    <color name="blueTabOn">#223380</color>
+    <color name="blueTabOff">#dfdfdf</color>
+    <color name="yellow">#fcd401</color>
+    <color name="yellow2">#f0ed61</color>
+    <color name="white_base">#f9f9f9</color>
+    <color name="white">#ffffff</color>
+
 </resources>

@@ -10,4 +10,3 @@ interface LoginViewContracts: BaseActivityContract {
 interface LoginPresenterContracts<V: LoginViewContracts>: BasePresenterContract<V> {
 
 }
-

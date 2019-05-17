@@ -70,4 +70,13 @@
     <string name="history">History</string>
     <string name="patient_information">Patient Information</string>
     <string name="diseases_history">Diseases History</string>
+
+    <!-- Calendar -->
+    <string name="monday">MON</string>
+    <string name="tuesday">TUE</string>
+    <string name="wednesday">WED</string>
+    <string name="thursday">THU</string>
+    <string name="friday">FRI</string>
+    <string name="saturday">SAT</string>
+    <string name="sunday">SUN</string>
 </resources>

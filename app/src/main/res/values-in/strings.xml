@@ -38,4 +38,12 @@
     <string name="history">Riwayat</string>
     <string name="patient_information">Informasi Pasien</string>
     <string name="diseases_history">Riwayat Penyakit</string>
+
+    <string name="monday">SEN</string>
+    <string name="tuesday">SEL</string>
+    <string name="wednesday">RAB</string>
+    <string name="thursday">KAM</string>
+    <string name="friday">JUM</string>
+    <string name="saturday">SAB</string>
+    <string name="sunday">MIN</string>
 </resources>

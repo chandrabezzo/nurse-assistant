@@ -4,6 +4,7 @@ package com.widyatama.nurseassistant.di
 import com.google.gson.Gson
 import com.widyatama.core.data.session.SessionHelper
 import com.widyatama.core.util.SchedulerProviderUtil
+import com.widyatama.nurseassistant.adapter.recyclerView.JadwalRVAdapter
 import com.widyatama.nurseassistant.adapter.recyclerView.OtherNurseRVAdapter
 import com.widyatama.nurseassistant.adapter.recyclerView.PatientRVAdapter
 import com.widyatama.nurseassistant.adapter.recyclerView.RiwayatPenyakitRVAdapter
@@ -60,6 +61,7 @@ val rvAdapterModule = module {
     factory { OtherNurseRVAdapter(androidContext(), ArrayList()) }
     factory { PatientRVAdapter(androidContext(), ArrayList()) }
     factory { RiwayatPenyakitRVAdapter(androidContext(), ArrayList()) }
+    factory { JadwalRVAdapter(androidContext(), ArrayList()) }
 }
 
 val spAdapterModule = module {

@@ -46,4 +46,6 @@
     <string name="friday">JUM</string>
     <string name="saturday">SAB</string>
     <string name="sunday">MIN</string>
+
+    <string name="selamat_pagi">Selamat Pagi</string>
 </resources>

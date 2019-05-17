@@ -1,9 +1,12 @@
 package com.widyatama.nurseassistant.adapter.recycleview
 
 import android.content.Context
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.widyatama.core.base.BaseHolder
 import com.widyatama.core.listener.OnItemClickListener
@@ -58,8 +61,28 @@ class PasienRVAdapter(var context : Context,
         override fun setContent(model: Pasien) {
             itemView.name.text = model.name
             itemView.floor.text = model.floor
+            itemView.room.text = model.room
+            itemView.bed.text = model.bed
             itemView.time.text = model.timeVisit
             itemView.todo.text = model.todoList?.get(0)
+            for (value : String in model.todoList!!){
+                val text = text()
+                text.text = value
+                itemView.container.addView(text)
+            }
         }
+
+        private fun text() : TextView{
+            val result = TextView(context)
+            val param = LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT)
+            result.layoutParams = param
+            result.textSize = 14f
+            result.setTextColor(context.resources.getColor(R.color.blueLight))
+            return result
+        }
+
     }
+
 }

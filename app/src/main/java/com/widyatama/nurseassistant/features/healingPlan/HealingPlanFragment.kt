@@ -3,6 +3,7 @@ package com.widyatama.nurseassistant.features.healingPlan
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.getbase.floatingactionbutton.FloatingActionButton
 import com.google.gson.Gson
@@ -13,6 +14,7 @@ import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.adapter.recyclerView.HealingRVAdapter
 import com.widyatama.nurseassistant.constanta.AppConstans
 import com.widyatama.nurseassistant.data.model.HealingPlan
+import com.widyatama.nurseassistant.features.threatment.ThreatmentActivity
 import com.widyatama.nurseassistant.view.activity.EventActivity
 import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienActivity
 import kotlinx.android.synthetic.main.fragment_healing_plan.*
@@ -54,6 +56,7 @@ class HealingPlanFragment : BaseFragment(), HealingPlanViewContracts {
                 return true
             }
         })
+
     }
 
     private fun initFab() {
@@ -66,15 +69,25 @@ class HealingPlanFragment : BaseFragment(), HealingPlanViewContracts {
             }
         }
         fabMenu.addButton(fabAction)
-        val fabActionEvent = FloatingActionButton(context)
-        fabActionEvent.title = "Event"
-        fabActionEvent.setIconDrawable(resources.getDrawable(R.drawable.ic_event_note_white_24dp))
-        fabActionEvent.colorNormal = resources.getColor(R.color.greenTransparent)
-        fabActionEvent.setOnClickListener {
+        val fabActionThreat = FloatingActionButton(context)
+        fabActionThreat.title = "Event"
+        fabActionThreat.setIconDrawable(resources.getDrawable(R.drawable.ic_event_note_white_24dp))
+        fabActionThreat.colorNormal = resources.getColor(R.color.greenTransparent)
+        fabActionThreat.setOnClickListener {
             launchActivity<EventActivity>{
             }
         }
+        fabMenu.addButton(fabActionThreat)
+        val fabActionEvent = FloatingActionButton(context)
+        fabActionEvent.title = "Threatment"
+        fabActionEvent.setIconDrawable(resources.getDrawable(R.drawable.ic_event_note_white_24dp))
+        fabActionEvent.colorNormal = resources.getColor(R.color.yellow)
+        fabActionEvent.setOnClickListener {
+            launchActivity<ThreatmentActivity>{
+            }
+        }
         fabMenu.addButton(fabActionEvent)
+
     }
 
     override fun onDestroy() {

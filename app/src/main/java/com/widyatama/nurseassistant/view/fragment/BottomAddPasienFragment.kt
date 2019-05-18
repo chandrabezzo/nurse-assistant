@@ -56,17 +56,17 @@ class BottomAddPasienFragment(sheetCallback: SheetCallback?) : BottomSheetDialog
             pasien.bed = spinKasur.selectedItem.toString()
             pasien.timeVisit = time.text.toString()
             pasien.todoList = todos
-//            presenter.addPasien(pasien)
-//            sheetCallback?.onFinish()
-            val calendar = Calendar.getInstance()
-            if (android.os.Build.VERSION.SDK_INT >= 23) {
-                calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH),
-                        timePic.getHour(), timePic.getMinute(), 0)
-            } else {
-                calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH),
-                        timePic.getCurrentHour(), timePic.getCurrentMinute(), 0)
-            }
-            Toast.makeText(context, calendar.timeInMillis.toString(), Toast.LENGTH_LONG).show()
+            presenter.addPasien(pasien)
+            sheetCallback?.onFinish()
+//            val calendar = Calendar.getInstance()
+//            if (android.os.Build.VERSION.SDK_INT >= 23) {
+//                calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH),
+//                        timePic.getHour(), timePic.getMinute(), 0)
+//            } else {
+//                calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH),
+//                        timePic.getCurrentHour(), timePic.getCurrentMinute(), 0)
+//            }
+//            Toast.makeText(context, calendar.timeInMillis.toString(), Toast.LENGTH_LONG).show()
         }
     }
 

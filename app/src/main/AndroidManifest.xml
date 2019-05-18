@@ -20,7 +20,8 @@
         <activity android:name=".features.detailPatient.DetailPatientActivity" />
         <activity android:name=".features.main.MainActivity" />
         <activity android:name=".features.login.LoginActivity" />
-        <activity android:name=".view.activity.listPasien.ListPasienActivity"/>
+        <activity android:name=".view.activity.listPasien.ListPasienActivity"
+            android:theme="@style/ThemeActionBar"/>
         <activity android:name=".features.splash.SplashActivity">
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
@@ -35,7 +36,8 @@
             android:resource="@array/preloaded_fonts" />
         <activity android:name=".view.VisitPasientActivity" />
         <activity android:name=".view.activity.NurseOnDutyActivity"/>
-        <activity android:name=".view.activity.EventActivity" />
+        <activity android:name=".features.threatment.ThreatmentActivity"/>
+        <activity android:name=".view.activity.EventActivity" android:theme="@style/ThemeActionBar" />
         <receiver
             android:name=".util.MyAlarm"
             android:enabled="true"

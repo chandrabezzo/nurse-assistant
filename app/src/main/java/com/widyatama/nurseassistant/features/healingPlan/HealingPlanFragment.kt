@@ -15,6 +15,7 @@ import com.widyatama.nurseassistant.constanta.AppConstans
 import com.widyatama.nurseassistant.data.model.HealingPlan
 import com.widyatama.nurseassistant.features.threatment.ThreatmentActivity
 import com.widyatama.nurseassistant.view.activity.EventActivity
+import com.widyatama.nurseassistant.view.activity.detailTodo.DetailTodoActivity
 import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienActivity
 import kotlinx.android.synthetic.main.fragment_healing_plan.*
 import org.koin.android.ext.android.inject
@@ -79,7 +80,7 @@ class HealingPlanFragment : BaseFragment(), HealingPlanViewContracts {
         fabMenu.addButton(fabActionThreat)
         val fabActionEvent = FloatingActionButton(context)
         fabActionEvent.title = "Threatment"
-        fabActionEvent.setIconDrawable(resources.getDrawable(R.drawable.ic_event_note_white_24dp))
+        fabActionEvent.setIconDrawable(resources.getDrawable(R.drawable.ic_accessible_white_24dp))
         fabActionEvent.colorNormal = resources.getColor(R.color.yellow)
         fabActionEvent.setOnClickListener {
             launchActivity<ThreatmentActivity>{

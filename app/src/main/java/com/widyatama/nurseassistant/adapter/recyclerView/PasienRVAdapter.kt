@@ -1,7 +1,6 @@
-package com.widyatama.nurseassistant.adapter.recycleview
+package com.widyatama.nurseassistant.adapter.recyclerView
 
 import android.content.Context
-import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,6 @@ import com.widyatama.core.base.BaseHolder
 import com.widyatama.core.listener.OnItemClickListener
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.data.model.Pasien
-import kotlinx.android.synthetic.main.item_rv_sample.view.*
 import kotlinx.android.synthetic.main.row_pasien.view.*
 
 
@@ -26,10 +24,14 @@ class PasienRVAdapter(var context : Context,
 
     lateinit var listener : OnItemClickListener
 
-    fun setOnItemClickListener(listener: OnItemClickListener){
+    fun setOnClick(listener: OnItemClickListener){
         this.listener = listener
     }
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Item {
+        return Item(LayoutInflater.from(parent.context)
+                .inflate(R.layout.row_pasien, parent, false))
+    }
 
     override fun getItemCount(): Int {
         return list.size
@@ -39,23 +41,16 @@ class PasienRVAdapter(var context : Context,
         holder.model = list[position]
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Item {
-        return Item(LayoutInflater.from(parent.context)
-                .inflate(R.layout.row_pasien, parent, false))
+    fun setItem(values: List<Pasien>){
+        list.clear()
+        list.addAll(values)
     }
 
 
     inner class Item(itemView : View) : BaseHolder<Pasien>(itemView){
 
         init {
-            // add listener if you need
-            itemView.setOnClickListener {
-                listener.onItemClick(it, layoutPosition)
-            }
-
-            itemView.setOnLongClickListener {
-                listener.onItemLongClick(it, layoutPosition)
-            }
+            itemView.setOnClickListener { listener.onItemClick(it, layoutPosition) }
         }
 
         override fun setContent(model: Pasien) {

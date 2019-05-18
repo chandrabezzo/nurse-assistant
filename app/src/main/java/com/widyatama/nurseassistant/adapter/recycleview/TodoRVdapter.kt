@@ -26,7 +26,7 @@ class TodoRVdapter(var context : Context,
 
     lateinit var listener : OnItemClickListener
 
-    fun setOnItemClickListener(listener: OnItemClickListener){
+    fun setOnClick(listener: OnItemClickListener){
         this.listener = listener
     }
 
@@ -42,6 +42,12 @@ class TodoRVdapter(var context : Context,
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Item {
         return Item(LayoutInflater.from(parent.context)
                 .inflate(R.layout.row_todo, parent, false))
+    }
+
+    fun setItem(values: List<String>){
+        list.clear()
+        list.addAll(values)
+
     }
 
 

@@ -18,9 +18,8 @@ import org.koin.android.ext.android.inject
 class DetailTodoActivity : BaseActivity(), DetailTodoViewContract, SheetCallback {
 
     val presenter : DetailTodoPresenter<DetailTodoViewContract> by inject()
-    lateinit var rvTodo : TodoRVdapter
+    val rvTodo : TodoRVdapter by inject()
     var listTodo = ArrayList<String>()
-    var layoutManager = LinearLayoutManager(this)
     var doneSheetFragment = DoneFragment(this)
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
@@ -28,26 +27,32 @@ class DetailTodoActivity : BaseActivity(), DetailTodoViewContract, SheetCallback
         presenter.onAttach(this)
 //        val id = intent.extras.getInt("id")
         initList()
-        presenter?.getList(2)
+        presenter?.getList(1)
 
         fabMenu.setOnClickListener {
             doneSheetFragment = DoneFragment(this)
             doneSheetFragment.show(supportFragmentManager, doneSheetFragment.tag)
         }
 
+        btnKembali.setOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     private fun initList(){
-        rvTodo = TodoRVdapter(this, listTodo)
+        var layoutManager = LinearLayoutManager(this)
         rv_list.layoutManager = layoutManager
         rv_list.adapter =rvTodo
     }
 
     override fun showResult(pasien: Pasien) {
-        listTodo.clear()
         pasien.todoList?.let { listTodo.addAll(it) }
         name.text = pasien.name
         floor.text = pasien.floor + " " + pasien.room + " " + pasien.bed
+        println("=========== size "+ listTodo.size)
+        rvTodo.setItem(listTodo)
+        rvTodo.notifyDataSetChanged()
     }
 
     override fun setLayout(): Int {
@@ -55,9 +60,8 @@ class DetailTodoActivity : BaseActivity(), DetailTodoViewContract, SheetCallback
     }
 
     override fun onFinish() {
-        println("=============== oke")
         doneSheetFragment.dismiss()
-        presenter?.delete(2)
+        presenter?.delete(1)
         launchActivity<ListPasienActivity>(true) {
         }    }
 }

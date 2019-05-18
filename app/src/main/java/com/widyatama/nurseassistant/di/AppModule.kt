@@ -4,7 +4,7 @@ package com.widyatama.nurseassistant.di
 import com.google.gson.Gson
 import com.widyatama.core.data.session.SessionHelper
 import com.widyatama.core.util.SchedulerProviderUtil
-import com.widyatama.nurseassistant.adapter.recycleview.PasienRVAdapter
+import com.widyatama.nurseassistant.adapter.recyclerView.PasienRVAdapter
 import com.widyatama.nurseassistant.adapter.recycleview.TodoRVdapter
 import com.widyatama.nurseassistant.data.local.LocalStorageHelper
 import com.widyatama.nurseassistant.data.network.ApiHelper
@@ -71,6 +71,7 @@ val rvAdapterModule = module {
     factory { RiwayatPenyakitRVAdapter(androidContext(), ArrayList()) }
     factory { JadwalRVAdapter(androidContext(), ArrayList()) }
     factory { HealingRVAdapter(androidContext(), ArrayList()) }
+    factory { TodoPasienRVAdapter(androidContext(), ArrayList()) }
 }
 
 

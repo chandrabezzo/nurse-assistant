@@ -1,16 +1,19 @@
 package com.widyatama.nurseassistant.features.patient
 
 import android.os.Bundle
+import com.widyatama.core.base.BaseFragment
+import com.widyatama.nurseassistant.R
+import android.os.Handler
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
-import com.widyatama.core.base.BaseFragment
+import com.widyatama.core.extension.hide
 import com.widyatama.core.extension.launchActivity
+import com.widyatama.core.extension.show
 import com.widyatama.core.listener.OnItemClickListener
-import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.adapter.recyclerView.PatientRVAdapter
 import com.widyatama.nurseassistant.constanta.AppConstans
 import com.widyatama.nurseassistant.data.model.Patient
@@ -21,8 +24,10 @@ import org.koin.android.ext.android.inject
 class PatientFragment : BaseFragment(), PatientViewContracts {
 
     val presenter: PatientPresenter<PatientViewContracts> by inject()
+
     val adapter: PatientRVAdapter by inject()
     val list = ArrayList<Patient>()
+    var isError = false
 
     override fun onViewInitialized(savedInstanceState: Bundle?) {
         presenter.onAttach(this)
@@ -36,7 +41,8 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
         val layoutManager = LinearLayoutManager(context)
         rv_patient.layoutManager = layoutManager
         rv_patient.adapter = adapter
-        presenter.getAllPatient(20)
+        sr_patient.isRefreshing = true
+        Handler().postDelayed({presenter.getAllPatient(20)}, 3000L)
 
         adapter.setOnItemClick(object : OnItemClickListener{
             override fun onItemClick(itemView: View, position: Int) {
@@ -49,6 +55,22 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
                 return true
             }
         })
+
+        sr_patient.setOnRefreshListener {
+            isError = !isError
+            Handler().postDelayed({presenter.getAllPatient(20)}, 5000L)
+        }
+
+        mb_refresh.setOnClickListener {
+            isError = false
+
+            sr_patient.show()
+            sr_patient.isRefreshing = true
+
+            Handler().postDelayed({
+                presenter.getAllPatient(20)
+            }, 3000L)
+        }
     }
 
     override fun onDestroy() {
@@ -61,11 +83,21 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
     }
 
     override fun showPatient(values: ArrayList<Patient>) {
-        list.clear()
-        list.addAll(values)
+        sr_patient.isRefreshing = false
 
-        adapter.setItem(list)
-        adapter.notifyDataSetChanged()
+        if (isError){
+            listError()
+        }
+        else {
+            ll_error.hide()
+            ll_list.show()
+
+            list.clear()
+            list.addAll(values)
+
+            adapter.setItem(list)
+            adapter.notifyDataSetChanged()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
@@ -89,5 +121,11 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
                 return true
             }
         })
+    }
+
+    override fun listError() {
+        ll_error.show()
+        sr_patient.hide()
+        ll_list.hide()
     }
 }

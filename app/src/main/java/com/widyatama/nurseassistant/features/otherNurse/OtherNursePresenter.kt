@@ -11,7 +11,6 @@ class OtherNursePresenter<V: OtherNurseViewContracts>
 constructor(private val apiHelper: ApiHelper, sessionHelper: SessionHelper, schedulerProvider:
 SchedulerProviderUtil, compositeDisposable: CompositeDisposable) : BasePresenter<V>(sessionHelper,
         schedulerProvider, compositeDisposable), OtherNursePresenterContracts<V> {
-
     override fun getAllNurse() {
         val allNurse = ArrayList<Nurse>()
 

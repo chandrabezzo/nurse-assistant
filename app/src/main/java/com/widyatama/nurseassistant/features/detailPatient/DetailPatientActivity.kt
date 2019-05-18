@@ -1,9 +1,10 @@
 package com.widyatama.nurseassistant.features.detailPatient
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.widyatama.core.base.BaseActivity
 import com.widyatama.nurseassistant.R
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.widyatama.nurseassistant.adapter.recyclerView.RiwayatPenyakitRVAdapter
 import com.widyatama.nurseassistant.constanta.AppConstans
 import com.widyatama.nurseassistant.data.model.Patient
@@ -14,6 +15,7 @@ import org.koin.android.ext.android.inject
 class DetailPatientActivity : BaseActivity(), DetailPatienViewContracts {
 
     val presenter: DetailPatientPresenter<DetailPatienViewContracts> by inject()
+
     val adapter: RiwayatPenyakitRVAdapter by inject()
     val list = ArrayList<RiwayatPenyakit>()
 
@@ -51,7 +53,6 @@ class DetailPatientActivity : BaseActivity(), DetailPatienViewContracts {
     override fun showRiwayat(values: ArrayList<RiwayatPenyakit>) {
         list.clear()
         list.addAll(values)
-
         adapter.setItem(list)
         adapter.notifyDataSetChanged()
     }

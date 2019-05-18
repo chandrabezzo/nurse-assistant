@@ -40,11 +40,11 @@ abstract class BaseActivity : AppCompatActivity(), BaseActivityContract, BaseFra
 
         mActionBar = supportActionBar
 
-//        if (toolbar != null){
-//            toolbar.setNavigationOnClickListener(View.OnClickListener { view: View ->
-//                onNavigationClick()
-//            })
-//        }
+        if (toolbar != null){
+            toolbar.setNavigationOnClickListener(View.OnClickListener { view: View ->
+                onNavigationClick()
+            })
+        }
 
         if (intent != null) {
             dataReceived = intent.extras

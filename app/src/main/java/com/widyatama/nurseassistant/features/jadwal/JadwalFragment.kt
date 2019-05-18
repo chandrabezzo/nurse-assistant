@@ -2,17 +2,17 @@ package com.widyatama.nurseassistant.features.jadwal
 
 
 import android.os.Bundle
-import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.widyatama.core.base.BaseFragment
 import com.widyatama.nurseassistant.R
+import org.koin.android.ext.android.inject
+import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.widyatama.nurseassistant.adapter.CalendarAdapter
 import com.widyatama.nurseassistant.adapter.recyclerView.JadwalRVAdapter
 import com.widyatama.nurseassistant.customView.FlexibleCalendar
 import com.widyatama.nurseassistant.data.model.Day
 import com.widyatama.nurseassistant.data.model.Jadwal
 import kotlinx.android.synthetic.main.fragment_jadwal.*
-import org.koin.android.ext.android.inject
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -29,7 +29,6 @@ class JadwalFragment : BaseFragment(), JadwalViewContracts {
     override fun onViewInitialized(savedInstanceState: Bundle?) {
         presenter.onAttach(this)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

@@ -25,4 +25,8 @@ interface PasienDao {
     @Query("SELECT * FROM "+ AppConstans.PASIEN + " WHERE id =:id")
     fun getById(id : Int) : Flowable<Pasien>
 
+    @Query("DELETE FROM " + AppConstans.PASIEN
+            + " WHERE id=:id")
+    fun delete(id: Int)
+
 }

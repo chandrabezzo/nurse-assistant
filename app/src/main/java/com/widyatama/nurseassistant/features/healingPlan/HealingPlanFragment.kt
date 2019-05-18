@@ -4,10 +4,17 @@ package com.widyatama.nurseassistant.features.healingPlan
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.getbase.floatingactionbutton.FloatingActionButton
+import com.google.gson.Gson
 import com.widyatama.core.base.BaseFragment
+import com.widyatama.core.extension.launchActivity
+import com.widyatama.core.listener.OnItemClickListener
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.adapter.recyclerView.HealingRVAdapter
+import com.widyatama.nurseassistant.constanta.AppConstans
 import com.widyatama.nurseassistant.data.model.HealingPlan
+import com.widyatama.nurseassistant.view.activity.EventActivity
+import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienActivity
 import kotlinx.android.synthetic.main.fragment_healing_plan.*
 import org.koin.android.ext.android.inject
 import java.util.*
@@ -25,7 +32,7 @@ class HealingPlanFragment : BaseFragment(), HealingPlanViewContracts {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        initFab()
         val layoutManager = LinearLayoutManager(context)
         rv_healing.layoutManager = layoutManager
         rv_healing.adapter = adapter
@@ -36,6 +43,38 @@ class HealingPlanFragment : BaseFragment(), HealingPlanViewContracts {
         tv_tanggal.text = cal.get(Calendar.DAY_OF_MONTH).toString()
         tv_greeting.text = getString(R.string.selamat_pagi)
         tv_user.text = "Yang Zhen, A.Md. Kep."
+
+        adapter.setOnItemClick(object : OnItemClickListener {
+            override fun onItemClick(itemView: View, position: Int) {
+                launchActivity<ListPasienActivity>{
+                }
+            }
+
+            override fun onItemLongClick(itemView: View, position: Int): Boolean {
+                return true
+            }
+        })
+    }
+
+    private fun initFab() {
+        val fabAction = FloatingActionButton(context)
+        fabAction.title = "Visit Pasien"
+        fabAction.setIconDrawable(resources.getDrawable(R.drawable.ic_person_white))
+        fabAction.colorNormal = resources.getColor(R.color.orange)
+        fabAction.setOnClickListener {
+            launchActivity<ListPasienActivity>{
+            }
+        }
+        fabMenu.addButton(fabAction)
+        val fabActionEvent = FloatingActionButton(context)
+        fabActionEvent.title = "Event"
+        fabActionEvent.setIconDrawable(resources.getDrawable(R.drawable.ic_event_note_white_24dp))
+        fabActionEvent.colorNormal = resources.getColor(R.color.greenTransparent)
+        fabActionEvent.setOnClickListener {
+            launchActivity<EventActivity>{
+            }
+        }
+        fabMenu.addButton(fabActionEvent)
     }
 
     override fun onDestroy() {

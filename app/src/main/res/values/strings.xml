@@ -79,4 +79,8 @@
     <string name="friday">FRI</string>
     <string name="saturday">SAT</string>
     <string name="sunday">SUN</string>
+
+    <string name="selamat_pagi">Good Morning</string>
+    <string name="error_loading_data">Error Loading Data</string>
+    <string name="refresh">Refresh</string>
 </resources>

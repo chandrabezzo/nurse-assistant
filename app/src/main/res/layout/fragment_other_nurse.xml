@@ -1,26 +1,59 @@
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    android:id="@+id/sr_nurse"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.widyatama.nurseassistant.features.otherNurse.OtherNurseFragment">
+    tools:context="com.widyatama.nurseassistant.features.otherNurse.OtherNurseFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
+        android:id="@+id/ll_error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_centerInParent="true">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_nurse"
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/item_rv_other_nurse"/>
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:text="@string/error_loading_data"/>
 
-        <ProgressBar
-            android:id="@+id/pb_loading"
-            android:layout_width="match_parent"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mb_refresh"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"/>
+            app:backgroundTint="@color/colorPrimary"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/refresh"/>
     </LinearLayout>
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sr_nurse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:id="@+id/ll_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_nurse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_rv_other_nurse"/>
+
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</RelativeLayout>

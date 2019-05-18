@@ -2,12 +2,15 @@ package com.widyatama.nurseassistant.features.profile
 
 import android.os.Bundle
 import android.view.View
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import com.widyatama.core.base.BaseFragment
 import com.widyatama.nurseassistant.R
+import com.widyatama.nurseassistant.data.model.Profile
+import kotlinx.android.synthetic.main.fragment_profile.*
 import org.koin.android.ext.android.inject
 import android.app.DatePickerDialog
-import android.view.*
-import kotlinx.android.synthetic.main.fragment_profile.*
 import java.util.*
 
 class ProfileFragment : BaseFragment(), ProfileViewContracts {
@@ -24,6 +27,7 @@ class ProfileFragment : BaseFragment(), ProfileViewContracts {
 
         showOptionMenu()
         disableEdit()
+        presenter.getProfile()
 
         et_birthday.setOnClickListener {
             val planningDate = DatePickerDialog(context, onSetBirthday,
@@ -32,7 +36,6 @@ class ProfileFragment : BaseFragment(), ProfileViewContracts {
 
             planningDate.show()
         }
-
     }
 
     override fun onDestroy() {
@@ -96,4 +99,32 @@ class ProfileFragment : BaseFragment(), ProfileViewContracts {
 
         et_birthday.setText(selected)
     }
+
+    override fun showProfile(value: Profile) {
+        et_full_name.setText(value.fullName)
+        et_phone_number.setText(value.phoneNumber)
+        et_email.setText(value.email)
+        et_birthday.setText(value.birthDay)
+        et_address.setText(value.address)
+    }
+
+//    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+//        inflater?.inflate(R.menu.profile_navigation, menu)
+//
+//        val edit = menu?.findItem(R.id.nav_edit)
+//        edit?.setOnMenuItemClickListener {
+//            isEditEnabled = !isEditEnabled
+//
+//            if (isEditEnabled){
+//                enableEdit()
+//                edit.setIcon(R.drawable.ic_save_white)
+//            }
+//            else {
+//                disableEdit()
+//                edit.setIcon(R.drawable.ic_edit_white)
+//            }
+//
+//            true
+//        }
+//    }
 }

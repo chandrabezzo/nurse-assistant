@@ -1,6 +1,5 @@
 package com.widyatama.nurseassistant.features.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.widyatama.core.base.BaseActivity
 import com.widyatama.core.extension.launchFragment
@@ -19,6 +18,12 @@ class MainActivity : BaseActivity(), MainViewContracts {
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
         presenter.onAttach(this)
+
+        setSupportActionBar(toolbar)
+        mActionBar = supportActionBar
+        toolbar.setNavigationOnClickListener {
+            onNavigationClick()
+        }
 
         bnv_main.setOnNavigationItemSelectedListener {
             when(it.itemId){

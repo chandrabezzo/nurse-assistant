@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.Toolbar
 import com.widyatama.core.base.BaseFragment
+import com.widyatama.core.util.CommonUtil
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.data.model.Profile
 import kotlinx.android.synthetic.main.fragment_profile.*

@@ -21,7 +21,6 @@ class MainActivity : BaseActivity(), MainViewContracts {
 
         setSupportActionBar(toolbar)
         mActionBar = supportActionBar
-        setActionBarTitle(getString(R.string.app_name))
         toolbar.setNavigationOnClickListener {
             onNavigationClick()
         }

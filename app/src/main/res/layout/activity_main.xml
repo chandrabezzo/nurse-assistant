@@ -13,7 +13,7 @@
         android:minHeight="?android:attr/actionBarSize"
         android:maxHeight="?android:attr/actionBarSize"
         android:fitsSystemWindows="true"
-        app:title="@string/app_name"
+        app:title="@string/nurse_assistant"
         android:background="@color/colorPrimary"
         android:layout_alignParentTop="true"
         android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>

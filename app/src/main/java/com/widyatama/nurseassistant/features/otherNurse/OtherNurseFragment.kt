@@ -2,12 +2,15 @@ package com.widyatama.nurseassistant.features.otherNurse
 
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.widyatama.core.base.BaseFragment
+import com.widyatama.core.extension.hide
+import com.widyatama.core.extension.show
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.adapter.recyclerView.OtherNurseRVAdapter
 import com.widyatama.nurseassistant.data.model.Nurse
@@ -19,6 +22,7 @@ class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
     val presenter: OtherNursePresenter<OtherNurseViewContracts> by inject()
     val adapter: OtherNurseRVAdapter by inject()
     val list = ArrayList<Nurse>()
+    var isError = false
 
     override fun onViewInitialized(savedInstanceState: Bundle?) {
         presenter.onAttach(this)
@@ -31,7 +35,24 @@ class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
         val layoutManager = LinearLayoutManager(context)
         rv_nurse.layoutManager = layoutManager
         rv_nurse.adapter = adapter
-        presenter.getAllNurse()
+        sr_nurse.isRefreshing = true
+        Handler().postDelayed({presenter.getAllNurse()}, 3000L)
+
+        sr_nurse.setOnRefreshListener {
+            isError = !isError
+            Handler().postDelayed({presenter.getAllNurse()}, 3000L)
+        }
+
+        mb_refresh.setOnClickListener {
+            isError = false
+
+            sr_nurse.show()
+            sr_nurse.isRefreshing = true
+
+            Handler().postDelayed({
+                presenter.getAllNurse()
+            }, 3000L)
+        }
     }
 
     override fun onDestroy() {
@@ -44,11 +65,21 @@ class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
     }
 
     override fun showNurse(values: ArrayList<Nurse>) {
-        list.clear()
-        list.addAll(values)
+        sr_nurse.isRefreshing = false
 
-        adapter.setItem(list)
-        adapter.notifyDataSetChanged()
+        if (isError) {
+            listError()
+        }
+        else {
+            ll_error.hide()
+            ll_list.show()
+
+            list.clear()
+            list.addAll(values)
+
+            adapter.setItem(list)
+            adapter.notifyDataSetChanged()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
@@ -72,5 +103,11 @@ class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
                 return true
             }
         })
+    }
+
+    override fun listError() {
+        ll_error.show()
+        sr_nurse.hide()
+        ll_list.hide()
     }
 }

@@ -34,20 +34,14 @@ class ListPasienActivity : BaseActivity(), ListPasienViewContract, SheetCallback
         }
 
         println("==============1")
-        adapter.setOnItemClick(object : OnItemClickListener{
-            override fun onItemClick(itemView: View, position: Int) {
-                println("==============2")
-
+        adapter.setOnItemClick(object  : TodoPasienRVAdapter.OnItemClickListeners{
+            override fun onItemClick(item: Pasien) {
                 launchActivity<DetailTodoActivity>{
+                    putExtra("id", item.id)
                 }
             }
-
-            override fun onItemLongClick(itemView: View, position: Int): Boolean {
-                println("==============2")
-
-                return true
-            }
         })
+
 
         presenter?.getList()
     }
@@ -89,16 +83,20 @@ class ListPasienActivity : BaseActivity(), ListPasienViewContract, SheetCallback
         sr_list.isRefreshing = false
         adapter.setItem(pasien)
         adapter.notifyDataSetChanged()
+        if (pasien.size > 0)
+            notif.visibility = View.GONE
     }
 
     override fun showLoading() {
         pb_load_more.visibility = View.VISIBLE
         rv_todo.visibility = View.GONE
+        notif.visibility = View.GONE
     }
 
     override fun hideLoading() {
         pb_load_more.visibility = View.GONE
         rv_todo.visibility = View.VISIBLE
+        notif.visibility = View.VISIBLE
     }
 
     override fun onDestroy() {

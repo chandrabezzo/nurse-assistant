@@ -8,6 +8,7 @@ import com.widyatama.core.extension.launchActivity
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.adapter.recycleview.TodoRVdapter
 import com.widyatama.nurseassistant.data.model.Pasien
+import com.widyatama.nurseassistant.features.main.MainActivity
 import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienActivity
 import com.widyatama.nurseassistant.view.fragment.BottomAddPasienFragment
 import com.widyatama.nurseassistant.view.fragment.DoneFragment
@@ -21,13 +22,14 @@ class DetailTodoActivity : BaseActivity(), DetailTodoViewContract, SheetCallback
     val rvTodo : TodoRVdapter by inject()
     var listTodo = ArrayList<String>()
     var doneSheetFragment = DoneFragment(this)
+    var id : Int = 0
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
         setSupportActionBar(toolbar)
         presenter.onAttach(this)
-//        val id = intent.extras.getInt("id")
+        id = intent.extras.getInt("id")
         initList()
-        presenter?.getList(1)
+        presenter?.getList(id)
 
         fabMenu.setOnClickListener {
             doneSheetFragment = DoneFragment(this)
@@ -61,7 +63,7 @@ class DetailTodoActivity : BaseActivity(), DetailTodoViewContract, SheetCallback
 
     override fun onFinish() {
         doneSheetFragment.dismiss()
-        presenter?.delete(1)
-        launchActivity<ListPasienActivity>(true) {
+        presenter?.delete(id)
+        launchActivity<MainActivity>(true) {
         }    }
 }

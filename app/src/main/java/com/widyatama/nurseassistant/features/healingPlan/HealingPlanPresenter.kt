@@ -17,7 +17,7 @@ SchedulerProviderUtil, compositeDisposable: CompositeDisposable) : BasePresenter
         val allHealing = ArrayList<HealingPlan>()
 
         for (counter in 0..10){
-            val healing = HealingPlan(1, "Pengecekan Gula", "${counter*10}",
+            val healing = HealingPlan(1, "Pengecekan Glukosa", "${counter*10} mg/dL",
                     R.drawable.ic_stethoscope_black)
             allHealing.add(healing)
         }

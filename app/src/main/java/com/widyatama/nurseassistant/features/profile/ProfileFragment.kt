@@ -46,28 +46,28 @@ class ProfileFragment : BaseFragment(), ProfileViewContracts {
     override fun setLayout(): Int {
         return R.layout.fragment_profile
     }
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater?.inflate(R.menu.profile_navigation, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item?.itemId){
-            R.id.nav_edit -> {
-                isEditEnabled = !isEditEnabled
-
-                if (isEditEnabled){
-                    enableEdit()
-                    item.setIcon(R.drawable.ic_save_white)
-                }
-                else {
-                    disableEdit()
-                    item.setIcon(R.drawable.ic_edit_white)
-                }
-            }
-        }
-
-        return true
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+//        inflater?.inflate(R.menu.profile_navigation, menu)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+//        when(item?.itemId){
+//            R.id.nav_edit -> {
+//                isEditEnabled = !isEditEnabled
+//
+//                if (isEditEnabled){
+//                    enableEdit()
+//                    item.setIcon(R.drawable.ic_save_white)
+//                }
+//                else {
+//                    disableEdit()
+//                    item.setIcon(R.drawable.ic_edit_white)
+//                }
+//            }
+//        }
+//
+//        return true
+//    }
 
     override fun enableEdit() {
         et_full_name.isEnabled = true
@@ -108,23 +108,24 @@ class ProfileFragment : BaseFragment(), ProfileViewContracts {
         et_address.setText(value.address)
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-//        inflater?.inflate(R.menu.profile_navigation, menu)
-//
-//        val edit = menu?.findItem(R.id.nav_edit)
-//        edit?.setOnMenuItemClickListener {
-//            isEditEnabled = !isEditEnabled
-//
-//            if (isEditEnabled){
-//                enableEdit()
-//                edit.setIcon(R.drawable.ic_save_white)
-//            }
-//            else {
-//                disableEdit()
-//                edit.setIcon(R.drawable.ic_edit_white)
-//            }
-//
-//            true
-//        }
-//    }
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater?.inflate(R.menu.profile_navigation, menu)
+
+        val edit = menu?.findItem(R.id.nav_edit)
+        edit?.setOnMenuItemClickListener {
+            isEditEnabled = !isEditEnabled
+
+            if (isEditEnabled){
+                enableEdit()
+                edit.setIcon(R.drawable.ic_save_white)
+            }
+            else {
+                disableEdit()
+                edit.setIcon(R.drawable.ic_edit_white)
+            }
+
+            return@setOnMenuItemClickListener true
+
+        }
+    }
 }

@@ -22,7 +22,7 @@
         <activity android:name=".features.login.LoginActivity" />
         <activity android:name=".view.activity.listPasien.ListPasienActivity"
             android:theme="@style/ThemeActionBar"/>
-        <activity android:name=".features.splash.SplashActivity">
+        <activity android:name=".features.splash.SplashActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

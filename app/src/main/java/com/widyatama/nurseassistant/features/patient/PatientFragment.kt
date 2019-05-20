@@ -1,6 +1,8 @@
 package com.widyatama.nurseassistant.features.patient
 
 import android.os.Bundle
+import com.widyatama.core.base.BaseFragment
+import com.widyatama.nurseassistant.R
 import android.os.Handler
 import android.view.Menu
 import android.view.MenuInflater
@@ -8,12 +10,10 @@ import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
-import com.widyatama.core.base.BaseFragment
 import com.widyatama.core.extension.hide
 import com.widyatama.core.extension.launchActivity
 import com.widyatama.core.extension.show
 import com.widyatama.core.listener.OnItemClickListener
-import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.adapter.recyclerView.PatientRVAdapter
 import com.widyatama.nurseassistant.constanta.AppConstans
 import com.widyatama.nurseassistant.data.model.Patient
@@ -24,6 +24,7 @@ import org.koin.android.ext.android.inject
 class PatientFragment : BaseFragment(), PatientViewContracts {
 
     val presenter: PatientPresenter<PatientViewContracts> by inject()
+
     val adapter: PatientRVAdapter by inject()
     val list = ArrayList<Patient>()
     var isError = false

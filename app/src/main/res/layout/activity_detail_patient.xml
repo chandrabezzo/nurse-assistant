@@ -8,6 +8,18 @@
     android:orientation="vertical"
     tools:context="com.widyatama.nurseassistant.features.detailPatient.DetailPatientActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?android:attr/actionBarSize"
+        android:maxHeight="?android:attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        app:title="@string/nurse_assistant"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

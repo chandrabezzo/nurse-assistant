@@ -1,18 +1,16 @@
 package com.widyatama.nurseassistant.features.profile
 
-import android.app.DatePickerDialog
 import android.os.Bundle
+import android.view.View
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
-import androidx.appcompat.widget.Toolbar
 import com.widyatama.core.base.BaseFragment
-import com.widyatama.core.util.CommonUtil
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.data.model.Profile
 import kotlinx.android.synthetic.main.fragment_profile.*
 import org.koin.android.ext.android.inject
+import android.app.DatePickerDialog
 import java.util.*
 
 class ProfileFragment : BaseFragment(), ProfileViewContracts {
@@ -24,7 +22,6 @@ class ProfileFragment : BaseFragment(), ProfileViewContracts {
     override fun onViewInitialized(savedInstanceState: Bundle?) {
         presenter.onAttach(this)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -49,6 +46,28 @@ class ProfileFragment : BaseFragment(), ProfileViewContracts {
     override fun setLayout(): Int {
         return R.layout.fragment_profile
     }
+//    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+//        inflater?.inflate(R.menu.profile_navigation, menu)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+//        when(item?.itemId){
+//            R.id.nav_edit -> {
+//                isEditEnabled = !isEditEnabled
+//
+//                if (isEditEnabled){
+//                    enableEdit()
+//                    item.setIcon(R.drawable.ic_save_white)
+//                }
+//                else {
+//                    disableEdit()
+//                    item.setIcon(R.drawable.ic_edit_white)
+//                }
+//            }
+//        }
+//
+//        return true
+//    }
 
     override fun enableEdit() {
         et_full_name.isEnabled = true
@@ -105,7 +124,8 @@ class ProfileFragment : BaseFragment(), ProfileViewContracts {
                 edit.setIcon(R.drawable.ic_edit_white)
             }
 
-            true
+            return@setOnMenuItemClickListener true
+
         }
     }
 }

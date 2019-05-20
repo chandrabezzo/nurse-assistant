@@ -2,16 +2,16 @@ package com.widyatama.nurseassistant.features.otherNurse
 
 
 import android.os.Bundle
+import com.widyatama.core.base.BaseFragment
+import com.widyatama.nurseassistant.R
 import android.os.Handler
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.widyatama.core.base.BaseFragment
 import com.widyatama.core.extension.hide
 import com.widyatama.core.extension.show
-import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.adapter.recyclerView.OtherNurseRVAdapter
 import com.widyatama.nurseassistant.data.model.Nurse
 import kotlinx.android.synthetic.main.fragment_other_nurse.*
@@ -20,6 +20,7 @@ import org.koin.android.ext.android.inject
 class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
 
     val presenter: OtherNursePresenter<OtherNurseViewContracts> by inject()
+
     val adapter: OtherNurseRVAdapter by inject()
     val list = ArrayList<Nurse>()
     var isError = false

@@ -8,12 +8,21 @@
 
     <application
         android:name=".MvpApp"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.splash.SplashActivity"
+        <activity android:name=".view.activity.detailTodo.DetailTodoActivity"></activity>
+        <activity android:name=".features.measurement.MeasurementActivity" />
+        <activity android:name=".features.detailPatient.DetailPatientActivity" />
+        <activity android:name=".features.main.MainActivity" />
+        <activity android:name=".features.login.LoginActivity" />
+        <activity android:name=".view.activity.listPasien.ListPasienActivity"
+            android:theme="@style/ThemeActionBar"/>
+        <activity android:name=".features.splash.SplashActivity">
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,20 +30,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".features.detailPatient.DetailPatientActivity" />
-        <activity android:name=".features.main.MainActivity"
-            android:theme="@style/NoActionBarTheme"/>
-        <activity android:name=".features.login.LoginActivity"
-            android:theme="@style/NoActionBarTheme"/>
-        <activity android:name=".view.activity.listPasien.ListPasienActivity">
-        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
         <activity android:name=".view.VisitPasientActivity" />
-        <activity android:name=".view.activity.NurseOnDutyActivity" />
-        <activity android:name=".view.activity.EventActivity"></activity>
+        <activity android:name=".view.activity.NurseOnDutyActivity"/>
+        <activity android:name=".features.threatment.ThreatmentActivity"/>
+        <activity android:name=".view.activity.EventActivity" android:theme="@style/ThemeActionBar" />
+        <receiver
+            android:name=".util.MyAlarm"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

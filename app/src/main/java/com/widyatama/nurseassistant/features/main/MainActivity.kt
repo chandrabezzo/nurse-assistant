@@ -2,8 +2,8 @@ package com.widyatama.nurseassistant.features.main
 
 import android.os.Bundle
 import com.widyatama.core.base.BaseActivity
-import com.widyatama.nurseassistant.R
 import com.widyatama.core.extension.launchFragment
+import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.features.healingPlan.HealingPlanFragment
 import com.widyatama.nurseassistant.features.jadwal.JadwalFragment
 import com.widyatama.nurseassistant.features.otherNurse.OtherNurseFragment
@@ -11,6 +11,7 @@ import com.widyatama.nurseassistant.features.patient.PatientFragment
 import com.widyatama.nurseassistant.features.profile.ProfileFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
+
 
 class MainActivity : BaseActivity(), MainViewContracts {
 

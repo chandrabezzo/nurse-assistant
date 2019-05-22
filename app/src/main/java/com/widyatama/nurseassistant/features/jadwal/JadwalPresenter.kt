@@ -15,7 +15,7 @@ SchedulerProviderUtil, compositeDisposable: CompositeDisposable) : BasePresenter
     override fun getJadwal(limit: Int) {
         val allJadwal = ArrayList<Jadwal>()
 
-        for (counter in 1..30){
+        for (counter in 15..25){
             var jamMulai = ""
             var jamSelesai = ""
             var jam = counter

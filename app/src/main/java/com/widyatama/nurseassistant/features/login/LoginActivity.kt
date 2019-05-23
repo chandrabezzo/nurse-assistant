@@ -6,6 +6,7 @@ import com.widyatama.core.extension.launchActivity
 import com.widyatama.core.util.CommonUtil
 import com.widyatama.nurseassistant.R
 import com.widyatama.core.extension.launchActivity
+import com.widyatama.core.extension.launchActivityClearAllStack
 import com.widyatama.nurseassistant.features.main.MainActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import org.koin.android.ext.android.inject
@@ -16,7 +17,7 @@ class LoginActivity : BaseActivity(), LoginViewContracts {
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
         presenter.onAttach(this)
-        mb_login.setOnClickListener { launchActivity<MainActivity>() }
+        mb_login.setOnClickListener { launchActivityClearAllStack<MainActivity>() }
 
         iv_indonesia.setOnClickListener {
             CommonUtil.changeLanguage(this, "in")

@@ -46,9 +46,7 @@ class PatientRVAdapter constructor(val context: Context, val list: ArrayList<Pat
 
         override fun setContent(model: Patient) {
             val tahun = context.getString(R.string.umur_tahun)
-            val gender = if (model.gender) context.getString(R.string.tuan) else context
-                    .getString(R.string.nona)
-            itemView.tv_patient.text = "$gender ${model.nama} (${model.umur} $tahun)"
+            itemView.tv_patient.text = "${model.nama} (${model.umur} $tahun)"
             itemView.tv_alamat.text = model.alamat
         }
     }

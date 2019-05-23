@@ -114,7 +114,7 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
 
             override fun onQueryTextChange(query: String?): Boolean {
                 query?.let { query ->
-                    val filteredList = list.filter { it.nama.contains(query) }
+                    val filteredList = list.filter { it.nama.toLowerCase().contains(query.toLowerCase()) }
                     adapter.setItem(filteredList)
                     adapter.notifyDataSetChanged()
                 }

@@ -1,4 +1,4 @@
-package com.widyatama.univcare.data.local.sampleDB.converter
+package com.widyatama.nurseassistant.data.local.sampleDB.converter
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson

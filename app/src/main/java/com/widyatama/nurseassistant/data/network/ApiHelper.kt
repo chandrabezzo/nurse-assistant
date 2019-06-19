@@ -1,6 +1,5 @@
 package com.widyatama.nurseassistant.data.network
 
-import com.widyatama.core.data.session.SessionHelper
 import com.widyatama.core.util.SchedulerProviderUtil
 
 /**
@@ -10,5 +9,5 @@ import com.widyatama.core.util.SchedulerProviderUtil
 class ApiHelper
 constructor(val schedulerProvider: SchedulerProviderUtil) {
 
-    lateinit var session : SessionHelper
+
 }

@@ -1,16 +1,12 @@
 package com.widyatama.nurseassistant.features.profile
 
 import com.widyatama.core.base.BasePresenter
-import com.widyatama.core.data.session.SessionHelper
 import com.widyatama.core.util.SchedulerProviderUtil
 import com.widyatama.nurseassistant.data.model.Profile
-import com.widyatama.nurseassistant.data.network.ApiHelper
 import io.reactivex.disposables.CompositeDisposable
-import java.util.*
 
 class ProfilePresenter<V: ProfileViewContracts>
-constructor(private val apiHelper: ApiHelper, sessionHelper: SessionHelper, schedulerProvider:
-SchedulerProviderUtil, compositeDisposable: CompositeDisposable) : BasePresenter<V>(sessionHelper,
+constructor(schedulerProvider: SchedulerProviderUtil, compositeDisposable: CompositeDisposable) : BasePresenter<V>(
         schedulerProvider, compositeDisposable), ProfilePresenterContracts<V> {
 
     override fun getProfile() {
@@ -19,5 +15,15 @@ SchedulerProviderUtil, compositeDisposable: CompositeDisposable) : BasePresenter
                 "Jl. Babakan, RT 03 RW 10, Kp. Babakan, Desa Cigugur Girang, Kec. Parongpong," +
                         " Kab. Bandung Barat")
         view?.showProfile(profile)
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return javaClass.hashCode()
     }
 }

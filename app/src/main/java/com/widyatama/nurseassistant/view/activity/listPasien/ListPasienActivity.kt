@@ -5,8 +5,6 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.getbase.floatingactionbutton.FloatingActionButton
 import com.widyatama.core.base.BaseActivity
-import com.widyatama.core.extension.launchActivity
-import com.widyatama.core.listener.OnItemClickListener
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.adapter.recyclerView.TodoPasienRVAdapter
 import com.widyatama.nurseassistant.data.model.Pasien
@@ -36,9 +34,10 @@ class ListPasienActivity : BaseActivity(), ListPasienViewContract, SheetCallback
         println("==============1")
         adapter.setOnItemClick(object  : TodoPasienRVAdapter.OnItemClickListeners{
             override fun onItemClick(item: Pasien) {
-                launchActivity<DetailTodoActivity>{
-                    putExtra("id", item.id)
-                }
+                var data = Bundle()
+                data.putInt("id", item.id ?: 0)
+
+                launchActivity(DetailTodoActivity::class.java, false, data)
             }
         })
 

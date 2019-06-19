@@ -1,21 +1,17 @@
 package com.widyatama.nurseassistant.features.healingPlan
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.getbase.floatingactionbutton.FloatingActionButton
-import com.google.gson.Gson
 import com.widyatama.core.base.BaseFragment
-import com.widyatama.core.extension.launchActivity
 import com.widyatama.core.listener.OnItemClickListener
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.adapter.recyclerView.HealingRVAdapter
-import com.widyatama.nurseassistant.constanta.AppConstans
 import com.widyatama.nurseassistant.data.model.HealingPlan
 import com.widyatama.nurseassistant.features.threatment.ThreatmentActivity
 import com.widyatama.nurseassistant.view.activity.EventActivity
-import com.widyatama.nurseassistant.view.activity.detailTodo.DetailTodoActivity
 import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienActivity
 import kotlinx.android.synthetic.main.fragment_healing_plan.*
 import org.koin.android.ext.android.inject
@@ -48,8 +44,7 @@ class HealingPlanFragment : BaseFragment(), HealingPlanViewContracts {
 
         adapter.setOnItemClick(object : OnItemClickListener {
             override fun onItemClick(itemView: View, position: Int) {
-                launchActivity<ListPasienActivity>{
-                }
+                launchActivity(ListPasienActivity::class.java)
             }
 
             override fun onItemLongClick(itemView: View, position: Int): Boolean {
@@ -65,8 +60,7 @@ class HealingPlanFragment : BaseFragment(), HealingPlanViewContracts {
         fabAction.setIconDrawable(resources.getDrawable(R.drawable.ic_person_white))
         fabAction.colorNormal = resources.getColor(R.color.orange)
         fabAction.setOnClickListener {
-            launchActivity<ListPasienActivity>{
-            }
+            launchActivity(ListPasienActivity::class.java)
         }
         fabMenu.addButton(fabAction)
         val fabActionThreat = FloatingActionButton(context)
@@ -74,8 +68,7 @@ class HealingPlanFragment : BaseFragment(), HealingPlanViewContracts {
         fabActionThreat.setIconDrawable(resources.getDrawable(R.drawable.ic_event_note_white_24dp))
         fabActionThreat.colorNormal = resources.getColor(R.color.greenTransparent)
         fabActionThreat.setOnClickListener {
-            launchActivity<EventActivity>{
-            }
+            launchActivity(ListPasienActivity::class.java)
         }
         fabMenu.addButton(fabActionThreat)
         val fabActionEvent = FloatingActionButton(context)
@@ -83,8 +76,7 @@ class HealingPlanFragment : BaseFragment(), HealingPlanViewContracts {
         fabActionEvent.setIconDrawable(resources.getDrawable(R.drawable.ic_accessible_white_24dp))
         fabActionEvent.colorNormal = resources.getColor(R.color.yellow)
         fabActionEvent.setOnClickListener {
-            launchActivity<ThreatmentActivity>{
-            }
+            launchActivity(ListPasienActivity::class.java)
         }
         fabMenu.addButton(fabActionEvent)
 

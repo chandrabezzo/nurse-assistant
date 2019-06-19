@@ -2,7 +2,6 @@ package com.widyatama.nurseassistant.features.jadwal
 
 import com.widyatama.core.base.BaseFragmentContract
 import com.widyatama.core.base.BasePresenterContract
-
 import com.widyatama.nurseassistant.data.model.Jadwal
 import java.util.*
 

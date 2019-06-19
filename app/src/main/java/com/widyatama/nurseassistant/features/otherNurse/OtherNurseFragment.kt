@@ -2,7 +2,6 @@ package com.widyatama.nurseassistant.features.otherNurse
 
 
 import android.os.Bundle
-import com.widyatama.core.base.BaseFragment
 import com.widyatama.nurseassistant.R
 import android.os.Handler
 import android.view.Menu
@@ -10,8 +9,7 @@ import android.view.MenuInflater
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.widyatama.core.extension.hide
-import com.widyatama.core.extension.show
+import com.widyatama.core.base.BaseFragment
 import com.widyatama.nurseassistant.adapter.recyclerView.OtherNurseRVAdapter
 import com.widyatama.nurseassistant.data.model.Nurse
 import kotlinx.android.synthetic.main.fragment_other_nurse.*
@@ -47,7 +45,7 @@ class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
         mb_refresh.setOnClickListener {
             isError = false
 
-            sr_nurse.show()
+            sr_nurse.visibility = View.VISIBLE
             sr_nurse.isRefreshing = true
 
             Handler().postDelayed({
@@ -72,8 +70,8 @@ class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
             listError()
         }
         else {
-            ll_error.hide()
-            ll_list.show()
+            ll_error.visibility = View.GONE
+            ll_list.visibility = View.VISIBLE
 
             list.clear()
             list.addAll(values)
@@ -107,8 +105,8 @@ class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
     }
 
     override fun listError() {
-        ll_error.show()
-        sr_nurse.hide()
-        ll_list.hide()
+        ll_error.visibility = View.VISIBLE
+        sr_nurse.visibility = View.GONE
+        ll_list.visibility = View.GONE
     }
 }

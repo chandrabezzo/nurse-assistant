@@ -2,7 +2,6 @@ package com.widyatama.nurseassistant.features.main
 
 import android.os.Bundle
 import com.widyatama.core.base.BaseActivity
-import com.widyatama.core.extension.launchFragment
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.features.healingPlan.HealingPlanFragment
 import com.widyatama.nurseassistant.features.jadwal.JadwalFragment

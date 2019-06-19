@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.view.View
 import android.view.Menu
 import android.view.MenuInflater
-import android.view.MenuItem
-import com.widyatama.core.base.BaseFragment
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.data.model.Profile
+import android.app.DatePickerDialog
+import com.widyatama.core.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_profile.*
 import org.koin.android.ext.android.inject
-import android.app.DatePickerDialog
 import java.util.*
 
 class ProfileFragment : BaseFragment(), ProfileViewContracts {

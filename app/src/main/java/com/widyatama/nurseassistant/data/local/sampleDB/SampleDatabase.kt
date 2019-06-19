@@ -8,9 +8,11 @@ import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.widyatama.nurseassistant.constanta.AppConstans
-import com.widyatama.nurseassistant.data.local.sampleDB.dao.*
-import com.widyatama.nurseassistant.data.model.*
-import com.widyatama.univcare.data.local.sampleDB.converter.StringOfListConverter
+import com.widyatama.nurseassistant.data.local.sampleDB.converter.StringOfListConverter
+import com.widyatama.nurseassistant.data.local.sampleDB.dao.PasienDao
+import com.widyatama.nurseassistant.data.local.sampleDB.dao.UserDao
+import com.widyatama.nurseassistant.data.model.Pasien
+import com.widyatama.nurseassistant.data.model.UserResponse
 
 /**
  * Created by bezzo on 11/01/18.

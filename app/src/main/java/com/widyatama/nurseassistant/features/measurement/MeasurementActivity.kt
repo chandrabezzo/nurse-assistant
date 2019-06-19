@@ -1,6 +1,5 @@
 package com.widyatama.nurseassistant.features.measurement
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.widyatama.core.base.BaseActivity
 import com.widyatama.nurseassistant.R

@@ -2,7 +2,6 @@ package com.widyatama.nurseassistant.features.threatment
 
 import com.widyatama.core.base.BaseActivityContract
 import com.widyatama.core.base.BasePresenterContract
-import com.widyatama.nurseassistant.data.model.Pasien
 
 /**
  * Created by iman on 16/05/2019.

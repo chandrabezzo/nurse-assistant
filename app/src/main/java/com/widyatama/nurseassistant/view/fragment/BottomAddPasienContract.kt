@@ -9,10 +9,10 @@ import com.widyatama.nurseassistant.data.model.Pasien
  * Created by iman on 16/05/2019.
  */
 
-interface BottomAddPasienViewContract : BaseFragmentContract{
+interface BottomAddPasienViewContract : BaseFragmentContract {
     fun showResult()
 }
 
-interface BottomAddPasienPresenterContract<V : BottomAddPasienViewContract>: BasePresenterContract<V>{
+interface BottomAddPasienPresenterContract<V : BottomAddPasienViewContract>: BasePresenterContract<V> {
     fun addPasien(value : Pasien)
 }

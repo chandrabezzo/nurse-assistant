@@ -1,7 +1,6 @@
 package com.widyatama.nurseassistant.features.patient
 
 import android.os.Bundle
-import com.widyatama.core.base.BaseFragment
 import com.widyatama.nurseassistant.R
 import android.os.Handler
 import android.view.Menu
@@ -10,9 +9,7 @@ import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
-import com.widyatama.core.extension.hide
-import com.widyatama.core.extension.launchActivity
-import com.widyatama.core.extension.show
+import com.widyatama.core.base.BaseFragment
 import com.widyatama.core.listener.OnItemClickListener
 import com.widyatama.nurseassistant.adapter.recyclerView.PatientRVAdapter
 import com.widyatama.nurseassistant.constanta.AppConstans
@@ -44,11 +41,11 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
         sr_patient.isRefreshing = true
         Handler().postDelayed({presenter.getAllPatient(20)}, 3000L)
 
-        adapter.setOnItemClick(object : OnItemClickListener{
+        adapter.setOnItemClick(object : OnItemClickListener {
             override fun onItemClick(itemView: View, position: Int) {
-                launchActivity<DetailPatientActivity>{
-                    putExtra(AppConstans.PATIENT, Gson().toJson(list[position]))
-                }
+                var data = Bundle()
+                data.putString(AppConstans.PATIENT, Gson().toJson(list[position]))
+                launchActivity(DetailPatientActivity::class.java, data);
             }
 
             override fun onItemLongClick(itemView: View, position: Int): Boolean {
@@ -64,7 +61,7 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
         mb_refresh.setOnClickListener {
             isError = false
 
-            sr_patient.show()
+            sr_patient.visibility = View.VISIBLE
             sr_patient.isRefreshing = true
 
             Handler().postDelayed({
@@ -89,8 +86,8 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
             listError()
         }
         else {
-            ll_error.hide()
-            ll_list.show()
+            ll_error.visibility = View.GONE
+            ll_list.visibility = View.VISIBLE
 
             list.clear()
             list.addAll(values)
@@ -124,8 +121,8 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
     }
 
     override fun listError() {
-        ll_error.show()
-        sr_patient.hide()
-        ll_list.hide()
+        ll_error.visibility = View.VISIBLE
+        sr_patient.visibility = View.GONE
+        ll_list.visibility = View.GONE
     }
 }

@@ -38,7 +38,7 @@ class PasienRVAdapter(var context : Context,
     }
 
     override fun onBindViewHolder(holder: Item, position: Int) {
-        holder.model = list[position]
+        holder.setContent(list[position])
     }
 
     fun setItem(values: List<Pasien>){

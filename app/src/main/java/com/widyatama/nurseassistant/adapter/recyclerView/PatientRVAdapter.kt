@@ -30,7 +30,7 @@ class PatientRVAdapter constructor(val context: Context, val list: ArrayList<Pat
     }
 
     override fun onBindViewHolder(holder: Item, position: Int) {
-        holder.model = list[position]
+        holder.setContent(list[position])
     }
 
     fun setItem(values: List<Patient>){

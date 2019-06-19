@@ -23,7 +23,7 @@ class RiwayatPenyakitRVAdapter constructor(val context: Context, val list: Array
     }
 
     override fun onBindViewHolder(holder: Item, position: Int) {
-        holder.model = list[position]
+        holder.setContent(list[position])
     }
 
     fun setItem(values: ArrayList<RiwayatPenyakit>){

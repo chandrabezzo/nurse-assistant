@@ -23,7 +23,7 @@ class OtherNurseRVAdapter constructor(val context: Context, val list: ArrayList<
     }
 
     override fun onBindViewHolder(holder: Item, position: Int) {
-        holder.model = list[position]
+        holder.setContent(list[position])
     }
 
     fun setItem(values: List<Nurse>){

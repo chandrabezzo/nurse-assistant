@@ -1,20 +1,9 @@
 package com.widyatama.nurseassistant.view.activity.listPasien
 
 import com.widyatama.core.base.BasePresenter
-import com.widyatama.core.data.session.SessionHelper
 import com.widyatama.core.util.SchedulerProviderUtil
 import com.widyatama.nurseassistant.data.local.LocalStorageHelper
-import com.widyatama.nurseassistant.data.network.ApiHelper
 import io.reactivex.disposables.CompositeDisposable
-import android.widget.Toast
-import android.app.AlarmManager
-import android.app.PendingIntent
-import android.content.Context
-import android.content.Intent
-import android.content.Context.ALARM_SERVICE
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.V
-import com.widyatama.nurseassistant.util.MyAlarm
 
 
 /**
@@ -22,9 +11,9 @@ import com.widyatama.nurseassistant.util.MyAlarm
  */
 
 class ListPasienPresenter<V: ListPasienViewContract>
-constructor(private val apiHelper: ApiHelper, private val localHelper: LocalStorageHelper,
-            sessionHelper: SessionHelper, schedulerProvider: SchedulerProviderUtil, compositeDisposable: CompositeDisposable) : BasePresenter<V>(sessionHelper,
-        schedulerProvider, compositeDisposable), ListPasienPresentContract<V> {
+constructor(private val localHelper: LocalStorageHelper, schedulerProvider: SchedulerProviderUtil,
+            compositeDisposable: CompositeDisposable) : BasePresenter<V>(schedulerProvider,
+        compositeDisposable), ListPasienPresentContract<V> {
 
     override fun getList() {
         view?.showLoading()

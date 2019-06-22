@@ -63,7 +63,7 @@ class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
         return R.layout.fragment_other_nurse
     }
 
-    override fun showNurse(values: ArrayList<Nurse>) {
+    override fun showNurse(values: List<Nurse>) {
         sr_nurse.isRefreshing = false
 
         if (isError) {
@@ -95,7 +95,8 @@ class OtherNurseFragment : BaseFragment(), OtherNurseViewContracts {
 
             override fun onQueryTextChange(query: String?): Boolean {
                 query?.let { query ->
-                    val filteredList = list.filter { it.nama.contains(query) }
+                    val filteredList = list.filter { it.nama.toLowerCase()
+                            .contains(query.toLowerCase()) }
                     adapter.setItem(filteredList)
                     adapter.notifyDataSetChanged()
                 }

@@ -5,7 +5,7 @@ import com.widyatama.core.base.BasePresenterContract
 import com.widyatama.nurseassistant.data.model.HealingPlan
 
 interface HealingPlanViewContracts: BaseFragmentContract {
-    fun showHealing(values: ArrayList<HealingPlan>)
+    fun showHealing(values: List<HealingPlan>)
 }
 
 interface HealingPlanPresenterContracts<V: HealingPlanViewContracts>: BasePresenterContract<V> {

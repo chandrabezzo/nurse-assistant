@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.widyatama.nurseassistant.data.model.UserResponse
+import com.widyatama.nurseassistant.data.model.HealingPlan
 import io.reactivex.Flowable
 
 
@@ -17,36 +17,36 @@ import io.reactivex.Flowable
  */
 
 @Dao
-interface UserDao {
+interface HealingPlanDao {
 
-    @Query("SELECT * FROM " + AppConstans.USER)
-    fun getAll(): Flowable<List<UserResponse.User>>
+    @Query("SELECT * FROM " + AppConstans.HEALING_PLAN)
+    fun getAll(): Flowable<List<HealingPlan>>
 
-    @Query("SELECT * FROM " + AppConstans.USER
+    @Query("SELECT * FROM " + AppConstans.HEALING_PLAN
             + " LIMIT 1")
-    fun get(): Flowable<UserResponse.User>
+    fun get(): Flowable<HealingPlan>
 
-    @Query("SELECT * FROM " + AppConstans.USER
+    @Query("SELECT * FROM " + AppConstans.HEALING_PLAN
             + " LIMIT :limit")
-    fun getLimit(limit : Int): Flowable<UserResponse.User>
+    fun getLimit(limit : Int): Flowable<HealingPlan>
 
-    @Query("SELECT * FROM " + AppConstans.USER
+    @Query("SELECT * FROM " + AppConstans.HEALING_PLAN
             + " WHERE id=:id")
-    fun get(id: Int): Flowable<UserResponse.User>
+    fun get(id: Int): Flowable<HealingPlan>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(value : UserResponse.User)
+    fun insert(value : HealingPlan)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun inserts(values : ArrayList<UserResponse.User>)
+    fun inserts(values : ArrayList<HealingPlan>)
 
-    @Query("DELETE FROM " + AppConstans.USER)
+    @Query("DELETE FROM " + AppConstans.HEALING_PLAN)
     fun deleteAll()
 
-    @Query("DELETE FROM " + AppConstans.USER
+    @Query("DELETE FROM " + AppConstans.HEALING_PLAN
             + " WHERE id=:id")
     fun delete(id: Int)
 
-    @Query("SELECT COUNT(*) FROM " + AppConstans.USER)
+    @Query("SELECT COUNT(*) FROM " + AppConstans.HEALING_PLAN)
     fun count(): Int
 }

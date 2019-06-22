@@ -90,7 +90,7 @@ class JadwalFragment : BaseFragment(), JadwalViewContracts {
         }
     }
 
-    override fun showJadwal(values: ArrayList<Jadwal>) {
+    override fun showJadwal(values: List<Jadwal>) {
         list.clear()
         list.addAll(values)
         adapter.setItem(list)

@@ -12,7 +12,6 @@ import com.google.gson.Gson
 import com.widyatama.core.base.BaseFragment
 import com.widyatama.core.listener.OnItemClickListener
 import com.widyatama.nurseassistant.adapter.recyclerView.PatientRVAdapter
-import com.widyatama.nurseassistant.constanta.AppConstans
 import com.widyatama.nurseassistant.data.model.Patient
 import com.widyatama.nurseassistant.features.detailPatient.DetailPatientActivity
 import kotlinx.android.synthetic.main.fragment_patient.*
@@ -79,7 +78,7 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
         return R.layout.fragment_patient
     }
 
-    override fun showPatient(values: ArrayList<Patient>) {
+    override fun showPatient(values: List<Patient>) {
         sr_patient.isRefreshing = false
 
         if (isError){

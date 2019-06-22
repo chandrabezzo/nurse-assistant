@@ -5,7 +5,6 @@ import com.widyatama.nurseassistant.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.widyatama.core.base.BaseActivity
 import com.widyatama.nurseassistant.adapter.recyclerView.RiwayatPenyakitRVAdapter
-import com.widyatama.nurseassistant.constanta.AppConstans
 import com.widyatama.nurseassistant.data.model.Patient
 import com.widyatama.nurseassistant.data.model.RiwayatPenyakit
 import kotlinx.android.synthetic.main.activity_detail_patient.*
@@ -53,7 +52,7 @@ class DetailPatientActivity : BaseActivity(), DetailPatienViewContracts {
         tv_alamat.text = value.alamat
     }
 
-    override fun showRiwayat(values: ArrayList<RiwayatPenyakit>) {
+    override fun showRiwayat(values: List<RiwayatPenyakit>) {
         list.clear()
         list.addAll(values)
         adapter.setItem(list)

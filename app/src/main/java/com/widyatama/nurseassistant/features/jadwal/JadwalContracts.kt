@@ -8,7 +8,7 @@ import java.util.*
 interface JadwalViewContracts: BaseFragmentContract {
     fun initCalendar(cal: Calendar)
 
-    fun showJadwal(values: ArrayList<Jadwal>)
+    fun showJadwal(values: List<Jadwal>)
 }
 
 interface JadwalPresenterContracts<V: JadwalViewContracts>: BasePresenterContract<V> {

@@ -6,13 +6,16 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.widyatama.nurseassistant.constanta.AppConstans
 
-@Entity(tableName = AppConstans.RIWAYAT_PENYAKIT)
-data class RiwayatPenyakit(
+@Entity(tableName = AppConstans.ACCOUNT)
+data class Account(
     @PrimaryKey
     @NonNull
-    @ColumnInfo(name = "nama")
-    val nama: String,
+    @ColumnInfo(name = "npm")
+    val npm: String,
 
-    @ColumnInfo(name = "tahun")
-    val tahun: String
+    @ColumnInfo(name = "username")
+    val username: String,
+
+    @ColumnInfo(name = "password")
+    val password: String
 )

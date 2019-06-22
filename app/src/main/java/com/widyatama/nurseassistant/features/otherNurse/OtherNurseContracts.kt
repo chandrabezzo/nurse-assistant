@@ -5,7 +5,7 @@ import com.widyatama.core.base.BasePresenterContract
 import com.widyatama.nurseassistant.data.model.Nurse
 
 interface OtherNurseViewContracts: BaseFragmentContract {
-    fun showNurse(values: ArrayList<Nurse>)
+    fun showNurse(values: List<Nurse>)
 
     fun listError()
 }

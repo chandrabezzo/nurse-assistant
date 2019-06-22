@@ -51,14 +51,14 @@ val presenterModule = module {
 val rvAdapterModule = module {
     factory { PasienRVAdapter(get(), ArrayList()) }
     factory { TodoRVdapter(get(), ArrayList()) }
-    factory { DetailPatientPresenter<DetailPatienViewContracts>(get(), get()) }
-    factory { HealingPlanPresenter<HealingPlanViewContracts>(get(), get()) }
-    factory { JadwalPresenter<JadwalViewContracts>(get(), get()) }
-    factory { LoginPresenter<LoginViewContracts>(get(), get()) }
+    factory { DetailPatientPresenter<DetailPatienViewContracts>(get(), get(), get()) }
+    factory { HealingPlanPresenter<HealingPlanViewContracts>(get(), get(), get()) }
+    factory { JadwalPresenter<JadwalViewContracts>(get(), get(), get()) }
+    factory { LoginPresenter<LoginViewContracts>(get(), get(), get()) }
     factory { MainPresenter<MainViewContracts>(get(), get()) }
-    factory { OtherNursePresenter<OtherNurseViewContracts>(get(), get()) }
-    factory { PatientPresenter<PatientViewContracts>(get(), get()) }
-    factory { ProfilePresenter<ProfileViewContracts>(get(), get()) }
+    factory { OtherNursePresenter<OtherNurseViewContracts>(get(), get(), get()) }
+    factory { PatientPresenter<PatientViewContracts>(get(), get(), get()) }
+    factory { ProfilePresenter<ProfileViewContracts>(get(), get(), get()) }
     factory { OtherNurseRVAdapter(androidContext(), ArrayList()) }
     factory { PatientRVAdapter(androidContext(), ArrayList()) }
     factory { RiwayatPenyakitRVAdapter(androidContext(), ArrayList()) }

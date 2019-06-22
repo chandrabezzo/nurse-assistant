@@ -43,4 +43,14 @@ public class LoginActivity extends BaseActivity implements LoginViewContracts {
     protected Integer setLayout() {
         return R.layout.activity_login;
     }
+
+    @Override
+    public void loginSuccess() {
+        
+    }
+
+    @Override
+    public void loginFailed() {
+
+    }
 }

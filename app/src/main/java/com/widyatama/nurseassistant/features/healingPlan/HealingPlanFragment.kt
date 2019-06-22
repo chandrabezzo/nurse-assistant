@@ -91,7 +91,7 @@ class HealingPlanFragment : BaseFragment(), HealingPlanViewContracts {
         return R.layout.fragment_healing_plan
     }
 
-    override fun showHealing(values: ArrayList<HealingPlan>) {
+    override fun showHealing(values: List<HealingPlan>) {
         list.clear()
         list.addAll(values)
         adapter.setItem(list)

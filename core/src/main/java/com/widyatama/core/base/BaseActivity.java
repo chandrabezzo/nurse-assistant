@@ -80,21 +80,21 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseActi
     }
 
     public void launchFragment(int view, Class<?> classFragment){
-        Fragment fragment = new Fragment();
+        Fragment fragment;
 
         try {
             fragment = (Fragment) classFragment.newInstance();
+
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+            transaction.replace(view, fragment);
+
+            transaction.commit();
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-        transaction.replace(view, fragment);
-
-        transaction.commit();
     }
 
     @Override

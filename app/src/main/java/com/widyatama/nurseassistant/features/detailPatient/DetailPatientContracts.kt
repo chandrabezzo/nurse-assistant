@@ -8,7 +8,7 @@ import com.widyatama.nurseassistant.data.model.RiwayatPenyakit
 interface DetailPatienViewContracts: BaseActivityContract {
     fun showInformation(value: Patient)
 
-    fun showRiwayat(values: ArrayList<RiwayatPenyakit>)
+    fun showRiwayat(values: List<RiwayatPenyakit>)
 }
 
 interface DetailPatientPresenterContracts<V: DetailPatienViewContracts>: BasePresenterContract<V> {

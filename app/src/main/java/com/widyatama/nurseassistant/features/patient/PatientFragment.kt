@@ -79,7 +79,7 @@ class PatientFragment : BaseFragment(), PatientViewContracts {
         return R.layout.fragment_patient
     }
 
-    override fun showPatient(values: ArrayList<Patient>) {
+    override fun showPatient(values: List<Patient>) {
         sr_patient.isRefreshing = false
 
         if (isError){

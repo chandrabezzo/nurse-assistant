@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.widyatama.nurseassistant.constanta.AppConstans
 import com.widyatama.nurseassistant.data.local.sampleDB.converter.StringOfListConverter
 import com.widyatama.nurseassistant.data.local.sampleDB.dao.*
 import com.widyatama.nurseassistant.data.model.*

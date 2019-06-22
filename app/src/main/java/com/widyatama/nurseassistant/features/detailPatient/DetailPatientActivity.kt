@@ -53,7 +53,7 @@ class DetailPatientActivity : BaseActivity(), DetailPatienViewContracts {
         tv_alamat.text = value.alamat
     }
 
-    override fun showRiwayat(values: ArrayList<RiwayatPenyakit>) {
+    override fun showRiwayat(values: List<RiwayatPenyakit>) {
         list.clear()
         list.addAll(values)
         adapter.setItem(list)

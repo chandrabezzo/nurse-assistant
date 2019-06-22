@@ -9,7 +9,6 @@ object AppConstans {
     const val TIMESTAMP_FORMAT = "dd/MM/yyyy HH:mm"
     const val API_STATUS_CODE_LOCAL_ERROR = 0
     const val DB_NAME = "nurse_assistant.db"
-    const val PROFILE = "profile"
     const val FCM_MESSAGE = "fcmMessage"
     const val VERIFICATION = "verification"
     const val VERIFICATION_CODE = "verificationCode"
@@ -17,12 +16,11 @@ object AppConstans {
     // Table
     const val USER = "User"
     const val PASIEN = "Pasien"
-    const val JABATAN = "Jabatan"
-    const val KARYAWAN = "Karyawan"
-    const val SOCMED = "Socmed"
-
-    // Country
-    const val COUNTRY_NAME = "CountryName"
-    const val PATIENT = "Patient"
-    const val No_RM = "NoRm"
+    const val PROFILE = "Profile"
+    const val PATIENT = "patient"
+    const val NURSE = "nurse"
+    const val JADWAL = "jadwal"
+    const val HEALING_PLAN = "healing_plan"
+    const val RIWAYAT_PENYAKIT = "riwayat_penyakit"
+    const val ACCOUNT = "account"
 }

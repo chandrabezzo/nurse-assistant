@@ -1,6 +1,7 @@
 package com.widyatama.nurseassistant.features.login
 
 import android.os.Bundle
+import android.widget.Toast
 import com.widyatama.core.base.BaseActivity
 import com.widyatama.core.util.CommonUtil
 import com.widyatama.nurseassistant.R
@@ -14,7 +15,17 @@ class LoginActivity : BaseActivity(), LoginViewContracts {
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
         presenter.onAttach(this)
-        mb_login.setOnClickListener { launchActivityClearAllStack(MainActivity::class.java) }
+        presenter.saveProfile()
+        presenter.saveAllPatient()
+        presenter.saveHealingPlan()
+        presenter.saveJadwal()
+        presenter.saveOtherNurse()
+        presenter.saveRiwayatPenyakit()
+        presenter.saveAccount()
+
+        mb_login.setOnClickListener {
+            presenter.login(et_username.text.toString(), et_password.text.toString())
+        }
 
         iv_indonesia.setOnClickListener {
             CommonUtil.changeLanguage(this, "in")
@@ -34,5 +45,13 @@ class LoginActivity : BaseActivity(), LoginViewContracts {
 
     override fun setLayout(): Int {
         return R.layout.activity_login
+    }
+
+    override fun loginSuccess() {
+        launchActivityClearAllStack(MainActivity::class.java)
+    }
+
+    override fun loginFailed() {
+        Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show()
     }
 }

@@ -13,8 +13,6 @@ import com.widyatama.nurseassistant.features.healingPlan.HealingPlanPresenter
 import com.widyatama.nurseassistant.features.healingPlan.HealingPlanViewContracts
 import com.widyatama.nurseassistant.features.jadwal.JadwalPresenter
 import com.widyatama.nurseassistant.features.jadwal.JadwalViewContracts
-import com.widyatama.nurseassistant.features.login.LoginPresenter
-import com.widyatama.nurseassistant.features.login.LoginViewContracts
 import com.widyatama.nurseassistant.features.main.MainPresenter
 import com.widyatama.nurseassistant.features.main.MainViewContracts
 import com.widyatama.nurseassistant.features.otherNurse.OtherNursePresenter
@@ -54,7 +52,7 @@ val rvAdapterModule = module {
     factory { DetailPatientPresenter<DetailPatienViewContracts>(get(), get(), get()) }
     factory { HealingPlanPresenter<HealingPlanViewContracts>(get(), get(), get()) }
     factory { JadwalPresenter<JadwalViewContracts>(get(), get(), get()) }
-    factory { LoginPresenter<LoginViewContracts>(get(), get(), get()) }
+//    factory { LoginPresenter<LoginViewContracts>(get(), get(), get()) }
     factory { MainPresenter<MainViewContracts>(get(), get()) }
     factory { OtherNursePresenter<OtherNurseViewContracts>(get(), get(), get()) }
     factory { PatientPresenter<PatientViewContracts>(get(), get(), get()) }

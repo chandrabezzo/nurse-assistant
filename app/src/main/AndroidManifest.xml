@@ -36,10 +36,6 @@
         <activity android:name=".view.activity.NurseOnDutyActivity"/>
         <activity android:name=".features.threatment.ThreatmentActivity"/>
         <activity android:name=".view.activity.EventActivity" android:theme="@style/ThemeActionBar" />
-        <receiver
-            android:name=".util.MyAlarm"
-            android:enabled="true"
-            android:exported="true" />
     </application>
 
 </manifest>

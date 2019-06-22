@@ -1,4 +1,4 @@
-package com.dwidasa.app.proline.di
+package com.widyatama.nurseassistant.di
 
 import androidx.room.Room
 import com.widyatama.nurseassistant.MvpApp

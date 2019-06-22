@@ -4,9 +4,11 @@ import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import com.widyatama.nurseassistant.constanta.AppConstans
+import com.widyatama.nurseassistant.data.local.sampleDB.converter.StringOfListConverter
 
 
 /**
@@ -44,6 +46,7 @@ class Pasien {
 
     @ColumnInfo(name = "todoList")
     @Expose
+    @TypeConverters(StringOfListConverter::class)
     var todoList : List<String>? = null
 
 }

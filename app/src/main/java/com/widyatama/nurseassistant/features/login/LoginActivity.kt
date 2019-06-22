@@ -36,6 +36,8 @@ class LoginActivity : BaseActivity(), LoginViewContracts {
             CommonUtil.changeLanguage(this, "en")
             recreate()
         }
+
+        launchActivityClearAllStack(MainActivity::class.java)
     }
 
     override fun onDestroy() {

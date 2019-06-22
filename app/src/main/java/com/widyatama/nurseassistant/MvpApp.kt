@@ -4,13 +4,9 @@ import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
 import com.androidnetworking.AndroidNetworking
-import com.dwidasa.app.proline.AppComponent
-import com.dwidasa.app.proline.DaggerAppComponent
-import com.dwidasa.app.proline.di.DatabaseModule
-import com.dwidasa.app.proline.di.MyAppModule
 import com.widyatama.core.util.AppLoggerUtil
 import com.widyatama.core.util.LocaleUtil
-import com.widyatama.nurseassistant.di.allModule
+import com.widyatama.nurseassistant.di.*
 import org.koin.android.ext.android.startKoin
 
 /**
@@ -32,7 +28,7 @@ class MvpApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-//        startKoin(this, allModule)
+        startKoin(this, allModule)
 
         AppLoggerUtil.init()
         AndroidNetworking.initialize(applicationContext)

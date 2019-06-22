@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dwidasa.app.proline.di
+package com.widyatama.nurseassistant.di
 
 import android.content.Context
 import com.widyatama.nurseassistant.MvpApp
@@ -29,6 +29,8 @@ import javax.inject.Singleton
 @Module
 class MyAppModule(private val currencyApplication: MvpApp){
 
-  @Provides @Singleton fun provideContext(): Context = currencyApplication
+  @Provides
+  @Singleton
+  fun provideContext(): Context = currencyApplication
 
 }

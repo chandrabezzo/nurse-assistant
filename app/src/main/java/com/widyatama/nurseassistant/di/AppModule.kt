@@ -21,12 +21,7 @@ import com.widyatama.nurseassistant.features.patient.PatientPresenter
 import com.widyatama.nurseassistant.features.patient.PatientViewContracts
 import com.widyatama.nurseassistant.features.profile.ProfilePresenter
 import com.widyatama.nurseassistant.features.profile.ProfileViewContracts
-import com.widyatama.nurseassistant.view.activity.detailTodo.DetailTodoPresenter
 import com.widyatama.nurseassistant.view.activity.detailTodo.DetailTodoViewContract
-import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienPresenter
-import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienViewContract
-import com.widyatama.nurseassistant.view.fragment.BottomAddPasienPresenter
-import com.widyatama.nurseassistant.view.fragment.BottomAddPasienViewContract
 import io.reactivex.disposables.CompositeDisposable
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
@@ -41,9 +36,9 @@ val appModule = module {
 }
 
 val presenterModule = module {
-    factory { ListPasienPresenter<ListPasienViewContract>(get(), get(), get()) }
-    factory { BottomAddPasienPresenter<BottomAddPasienViewContract>(get(), get(), get(), get()) }
-    factory { DetailTodoPresenter<DetailTodoViewContract>(get(), get(), get()) }
+//    factory { ListPasienPresenter<ListPasienViewContract>(get(), get(), get()) }
+//    factory { BottomAddPasienPresenter<BottomAddPasienViewContract>(get(), get(), get(), get()) }
+//    factory { DetailTodoPresenter<DetailTodoViewContract>(get(), get(), get()) }
 }
 
 val rvAdapterModule = module {

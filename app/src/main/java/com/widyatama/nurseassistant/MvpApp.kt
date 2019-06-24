@@ -32,7 +32,7 @@ class MvpApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-//        startKoin(this, allModule)
+        startKoin(this, allModule)
 
         AppLoggerUtil.init()
         AndroidNetworking.initialize(applicationContext)

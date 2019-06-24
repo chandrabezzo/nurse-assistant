@@ -10,6 +10,7 @@ import com.widyatama.core.base.BaseActivity;
 import com.widyatama.core.util.CommonUtils;
 import com.widyatama.nurseassistant.R;
 import com.widyatama.nurseassistant.features.main.MainActivity;
+import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienActivity;
 
 public class LoginActivity extends BaseActivity implements LoginViewContracts {
 

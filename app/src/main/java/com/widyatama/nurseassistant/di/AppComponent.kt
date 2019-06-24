@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dwidasa.app.proline
+package com.widyatama.nurseassistant.di
 
 import com.dwidasa.app.proline.di.DatabaseModule
 import com.dwidasa.app.proline.di.MyAppModule

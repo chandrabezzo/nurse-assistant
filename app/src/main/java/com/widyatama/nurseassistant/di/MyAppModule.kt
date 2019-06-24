@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dwidasa.app.proline.di
+package com.widyatama.nurseassistant.di
 
 import android.content.Context
 import com.widyatama.nurseassistant.MvpApp

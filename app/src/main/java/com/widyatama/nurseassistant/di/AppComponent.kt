@@ -16,8 +16,6 @@
 
 package com.widyatama.nurseassistant.di
 
-import com.dwidasa.app.proline.di.DatabaseModule
-import com.dwidasa.app.proline.di.MyAppModule
 import com.widyatama.nurseassistant.view.activity.detailTodo.DetailTodoPresenter
 import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienPresenter
 import com.widyatama.nurseassistant.view.fragment.BottomAddPasienPresenter

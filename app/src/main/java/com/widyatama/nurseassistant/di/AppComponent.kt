@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-package com.dwidasa.app.proline
+package com.widyatama.nurseassistant.di
 
-import com.dwidasa.app.proline.di.DatabaseModule
-import com.dwidasa.app.proline.di.MyAppModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -26,6 +24,7 @@ import javax.inject.Singleton
  */
 
 @Component(modules = arrayOf(MyAppModule::class, DatabaseModule::class))
-@Singleton interface AppComponent {
+@Singleton
+interface AppComponent {
 
 }

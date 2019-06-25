@@ -1,6 +1,5 @@
 package com.widyatama.nurseassistant.features.healingPlan
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,8 +9,6 @@ import com.widyatama.core.listener.OnItemClickListener
 import com.widyatama.nurseassistant.R
 import com.widyatama.nurseassistant.adapter.recyclerView.HealingRVAdapter
 import com.widyatama.nurseassistant.data.model.HealingPlan
-import com.widyatama.nurseassistant.features.threatment.ThreatmentActivity
-import com.widyatama.nurseassistant.view.activity.EventActivity
 import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienActivity
 import kotlinx.android.synthetic.main.fragment_healing_plan.*
 import org.koin.android.ext.android.inject

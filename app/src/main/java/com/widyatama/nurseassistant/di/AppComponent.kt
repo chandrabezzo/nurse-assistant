@@ -16,6 +16,9 @@
 
 package com.widyatama.nurseassistant.di
 
+import com.widyatama.nurseassistant.view.activity.detailTodo.DetailTodoPresenter
+import com.widyatama.nurseassistant.view.activity.listPasien.ListPasienPresenter
+import com.widyatama.nurseassistant.view.fragment.BottomAddPasienPresenter
 import dagger.Component
 import javax.inject.Singleton
 
@@ -24,7 +27,10 @@ import javax.inject.Singleton
  */
 
 @Component(modules = arrayOf(MyAppModule::class, DatabaseModule::class))
-@Singleton
-interface AppComponent {
+@Singleton interface AppComponent {
+
+    fun inject(listPasienPresenter: ListPasienPresenter)
+    fun inject(bottomAddPasienPresenter: BottomAddPasienPresenter)
+    fun inject(detailTodoPresenter: DetailTodoPresenter)
 
 }

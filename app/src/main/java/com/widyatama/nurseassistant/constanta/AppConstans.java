@@ -13,4 +13,6 @@ public class AppConstans {
     public static final String HEALING_PLAN = "healing_plan";
     public static final String RIWAYAT_PENYAKIT = "riwayat_penyakit";
     public static final String ACCOUNT = "account";
+    public static final String PATH_NURSE = "/Nurse";
+    public static final String FILENAME_EXCEL = "todo_list.xls";
 }

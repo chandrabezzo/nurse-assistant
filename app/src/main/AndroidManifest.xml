@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MvpApp"
@@ -36,10 +37,7 @@
         <activity android:name=".view.activity.NurseOnDutyActivity"/>
         <activity android:name=".features.threatment.ThreatmentActivity"/>
         <activity android:name=".view.activity.EventActivity" android:theme="@style/ThemeActionBar" />
-        <receiver
-            android:name=".util.MyAlarm"
-            android:enabled="true"
-            android:exported="true" />
+ 
     </application>
 
 </manifest>

@@ -71,6 +71,7 @@ public class ListPasienAdapter extends RecyclerView.Adapter<ListPasienAdapter.My
         holder.room.setText(pasien.getRoom());
         holder.bed.setText(pasien.getBed());
         holder.time.setText(pasien.getTimeVisit());
+        holder.container.removeAllViewsInLayout();
         for (String val : pasien.getTodoList()){
             TextView tv = text();
             tv.setText(val);

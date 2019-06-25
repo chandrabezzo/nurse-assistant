@@ -90,6 +90,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     implementation project(":core")
+    implementation files('libs/jxl.jar')
 
     // # Android Support Library
     implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompatVersion"

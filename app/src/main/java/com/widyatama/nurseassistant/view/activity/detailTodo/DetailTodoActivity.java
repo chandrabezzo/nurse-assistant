@@ -31,6 +31,7 @@ public class DetailTodoActivity extends BaseActivity implements DetailTodoViewCo
     private List<String> todoList = new ArrayList<>();
     private DoneFragment doneFragment;
 
+
     @Override
     protected void onInitializedView(Bundle savedInstanceState) {
         presenter = new DetailTodoPresenter(getContext(), this);

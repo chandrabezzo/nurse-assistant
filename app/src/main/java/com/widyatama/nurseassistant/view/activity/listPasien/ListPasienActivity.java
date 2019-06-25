@@ -1,9 +1,16 @@
 package com.widyatama.nurseassistant.view.activity.listPasien;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,7 +38,9 @@ public class ListPasienActivity extends BaseActivity implements ListPasienViewCo
     private ListPasienAdapter adapter;
     private List<Pasien> list = new ArrayList<>();
     private RecyclerView recyclerView;
+    private TextView notif;
     private FloatingActionsMenu fabMenu;
+    final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
 
     @Override
     protected void onInitializedView(Bundle savedInstanceState) {
@@ -43,6 +52,7 @@ public class ListPasienActivity extends BaseActivity implements ListPasienViewCo
     }
 
     private void initRecycleview(){
+        notif = (TextView) findViewById(R.id.notif);
         recyclerView = (RecyclerView) findViewById(R.id.rv_todo);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -75,6 +85,17 @@ public class ListPasienActivity extends BaseActivity implements ListPasienViewCo
             }
         });
         fabMenu.addButton(fabButton);
+        FloatingActionButton fabButtonExport = new FloatingActionButton(this);
+        fabButtonExport.setTitle("Export File");
+        fabButtonExport.setIconDrawable(getResources().getDrawable(R.drawable.ic_event_note_white_24dp));
+        fabButtonExport.setColorNormal(getResources().getColor(R.color.orange));
+        fabButtonExport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requestPermission();
+            }
+        });
+        fabMenu.addButton(fabButtonExport);
     }
 
     private void showBottomDialog(){
@@ -89,8 +110,11 @@ public class ListPasienActivity extends BaseActivity implements ListPasienViewCo
 
     @Override
     public void showPasien(@NotNull List<Pasien> pasien) {
+        list.addAll(pasien);
         adapter.setItem(pasien);
         adapter.notifyDataSetChanged();
+        if (pasien.size() > 0)
+            notif.setVisibility(View.GONE);
     }
 
     @Override
@@ -113,5 +137,33 @@ public class ListPasienActivity extends BaseActivity implements ListPasienViewCo
         bottomSheetDialogFragment.dismiss();
         presenter.getList();
         fabMenu.collapse();
+        Toast.makeText(this, "Success", Toast.LENGTH_LONG).show();
+    }
+
+    private void requestPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ) {
+            ActivityCompat
+                    .requestPermissions(ListPasienActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_ASK_PERMISSIONS);
+        } else {
+            presenter.exportToExcel(list);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_CODE_ASK_PERMISSIONS:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // Permission Granted
+                    presenter.exportToExcel(list);
+                } else {
+                    // Permission Denied
+                    Toast.makeText(ListPasienActivity.this, "Permission Denied", Toast.LENGTH_SHORT)
+                            .show();
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 }

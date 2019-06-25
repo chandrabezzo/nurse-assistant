@@ -21,6 +21,9 @@ public class BasePresenter<V extends BaseViewContract> implements BasePresenterC
 
     public V view;
 
+    public BasePresenter() {
+    }
+
     boolean isViewAttached(){
         return view != null;
     }
